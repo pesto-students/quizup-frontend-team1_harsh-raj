@@ -1,8 +1,10 @@
+import Sidebar from "../components/Sidebar";
+
 function Dashboard() {
 	return (
-		<div>
-			<h3>Dashboard</h3>
-		</div>
+		<>
+			<Sidebar />
+		</>
 	);
 }
 
