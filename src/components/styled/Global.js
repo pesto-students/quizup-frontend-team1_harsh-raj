@@ -5,13 +5,15 @@ const GlobalStyles = createGlobalStyle`
 
   *{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
 
   body{
     font-family: 'Lato', sans-serif;
+    font-size: 1.15em;
     margin: 0;
     padding: 0;
-    font-size: 1.15em;
     color: ${({ theme }) => theme.colors.darkGreen}
   }
 `;

@@ -21,7 +21,6 @@ function App() {
 	return (
 		<ThemeProvider theme={theme}>
 			<GlobalStyles />
-			<h1> QUIZUP</h1>
 			<Dashboard />
 		</ThemeProvider>
 	);
