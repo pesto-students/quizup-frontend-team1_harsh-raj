@@ -37,7 +37,7 @@ const examData = [
 	{
 		id: "8",
 		name: "Police Exams",
-		image: "polce.svg",
+		image: "police.svg",
 	},
 	{
 		id: "9",

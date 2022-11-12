@@ -1,6 +1,8 @@
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import GlobalStyles from "./components/styled/Global";
 import { ThemeProvider } from "styled-components";
+import Exams from "./pages/Exams";
 
 const theme = {
 	colors: {
@@ -18,10 +20,15 @@ const theme = {
 
 function App() {
 	return (
-		<ThemeProvider theme={theme}>
-			<GlobalStyles />
-			<Dashboard />
-		</ThemeProvider>
+		<Router>
+			<ThemeProvider theme={theme}>
+				<GlobalStyles />
+				<Routes>
+					<Route path="/" element={<Dashboard />} />
+					<Route path="/exams" element={<Exams />} />
+				</Routes>
+			</ThemeProvider>
+		</Router>
 	);
 }
 

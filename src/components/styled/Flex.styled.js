@@ -32,4 +32,10 @@ export const Flex = styled.div`
 			justify-content: space-between;
 			align-items: center;
 		`}
+
+		${(props) =>
+		props.wrap &&
+		css`
+			flex-wrap: wrap;
+		`}
 `;
