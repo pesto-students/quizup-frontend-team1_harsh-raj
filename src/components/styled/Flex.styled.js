@@ -2,7 +2,6 @@ import styled, { css } from "styled-components";
 
 export const Flex = styled.div`
 	display: flex;
-	gap: 10px;
 	flex-direction: ${(layout) => layout || "row"};
 
 	${(props) =>
@@ -16,6 +15,14 @@ export const Flex = styled.div`
 	${(props) =>
 		props.logo &&
 		css`
+			gap: 10px;
+			align-items: center;
+		`}
+
+		${(props) =>
+		props.searchbar &&
+		css`
+			justify-content: space-between;
 			align-items: center;
 		`}
 `;
