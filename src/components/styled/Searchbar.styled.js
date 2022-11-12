@@ -6,5 +6,5 @@ export const StyledSearchbar = styled.input`
 	border-radius: 10px;
 	padding: 10px;
 	font-size: 1rem;
-	border: 0.5px solid black;
+	border: 2px solid ${({ theme }) => theme.colors.darkGreen};
 `;
