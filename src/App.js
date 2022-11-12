@@ -1,12 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Header from './components/Header'
+import { Container } from './components/styles/Container.styled'
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-     <h1> QUIZUP</h1>
-    </div>
-  );
+    <> 
+    
+    <Container>
+      <Header/>
+    </Container>
+    </>
+  )
 }
 
-export default App;
+export default App
