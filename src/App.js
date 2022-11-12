@@ -1,4 +1,3 @@
-// import "./App.css";
 import Dashboard from "./pages/Dashboard";
 import GlobalStyles from "./components/styled/Global";
 import { ThemeProvider } from "styled-components";

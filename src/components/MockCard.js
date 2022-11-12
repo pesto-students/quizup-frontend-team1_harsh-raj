@@ -1,7 +1,6 @@
 import { StyledMockCard, StyledIcon, Button } from "./styled/MockCard.styled";
 
 function MockCard({ item: { name, image } }) {
-	console.log(name, image);
 	return (
 		<StyledMockCard>
 			<StyledIcon>

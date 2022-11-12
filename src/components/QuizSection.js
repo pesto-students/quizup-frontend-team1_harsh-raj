@@ -1,23 +1,23 @@
-import MockCard from "./MockCard";
+import QuizCard from "./QuizCard";
 import { Flex } from "./styled/Flex.styled";
 import { StyledSection } from "./styled/Section.styled";
-import examData from "../examData";
+import quizData from "../quizData";
 import { StyledButton } from "./styled/Button.styled";
 
-function MockSection() {
+function QuizSection() {
 	return (
 		<StyledSection>
 			<Flex seeMoreBtn>
-				<h3>Here are some Exams for you to explore...</h3>
+				<h3>Take a look at these popular quizzes for today...</h3>
 				<StyledButton>See More</StyledButton>
 			</Flex>
 			<Flex>
-				{examData.slice(0, 5).map((item, index) => (
-					<MockCard key={index} item={item} />
+				{quizData.slice(0, 5).map((item, index) => (
+					<QuizCard key={index} item={item} />
 				))}
 			</Flex>
 		</StyledSection>
 	);
 }
 
-export default MockSection;
+export default QuizSection;

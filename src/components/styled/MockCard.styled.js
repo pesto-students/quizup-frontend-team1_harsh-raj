@@ -8,8 +8,7 @@ export const StyledMockCard = styled.div`
 	padding: 15px;
 	margin-top: 40px;
 	margin-right: 50px;
-	box-shadow: 0px 4px 50px 10px rgba(255, 208, 90, 0.2),
-		0px 4px 10px 3px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.1);
 	text-align: center;
 	display: flex;
 	flex-direction: column;
@@ -18,14 +17,16 @@ export const StyledMockCard = styled.div`
 `;
 
 export const StyledIcon = styled.div`
-	width: 45px;
+	width: 40px;
+	height: 40px;
 	padding: 5px;
 	border-radius: 50%;
 	background-color: ${({ theme }) => theme.colors.white};
-	/* margin-bottom: 20px; */
 
 	& > img {
-		max-width: 30px;
+		width: 25px;
+		position: relative;
+		top: 3px;
 	}
 `;
 

@@ -1,5 +1,5 @@
 import styled from "styled-components";
 
-export const StyledMockSection = styled.section`
+export const StyledSection = styled.section`
 	margin-top: 50px;
 `;
