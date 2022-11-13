@@ -10,6 +10,7 @@ export const Flex = styled.div`
 			height: 100%;
 			flex-direction: column;
 			justify-content: space-between;
+			align-items: center;
 		`}
 
 	${(props) =>

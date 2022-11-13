@@ -3,6 +3,7 @@ import Dashboard from "./pages/Dashboard";
 import GlobalStyles from "./components/styled/Global";
 import { ThemeProvider } from "styled-components";
 import Exams from "./pages/Exams";
+import Quiz from "./pages/Quiz";
 
 const theme = {
 	colors: {
@@ -26,6 +27,7 @@ function App() {
 				<Routes>
 					<Route path="/" element={<Dashboard />} />
 					<Route path="/exams" element={<Exams />} />
+					<Route path="/quiz" element={<Quiz />} />
 				</Routes>
 			</ThemeProvider>
 		</Router>

@@ -1,9 +1,8 @@
 import styled, { css } from "styled-components";
 
 export const StyledSidebar = styled.nav`
-	/* padding: 20px; */
 	height: 100vh;
-	width: 250px;
+	max-width: 250px;
 	background-color: ${({ theme }) => theme.colors.darkGreen};
 	color: white;
 	padding: 30px;
