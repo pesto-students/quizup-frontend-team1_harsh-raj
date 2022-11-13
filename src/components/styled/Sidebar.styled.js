@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const StyledSidebar = styled.nav`
 	height: 100vh;
@@ -6,6 +6,27 @@ export const StyledSidebar = styled.nav`
 	background-color: ${({ theme }) => theme.colors.darkGreen};
 	color: white;
 	padding: 30px;
+
+	& img {
+		width: 25px;
+	}
+
+	& a {
+		text-decoration: none;
+	}
+
+	& a.active {
+		& > button {
+			background-color: #fff;
+			color: #343e3d;
+			text-decoration: none;
+
+			& img {
+				filter: brightness(0) saturate(100%) invert(23%) sepia(25%)
+					saturate(212%) hue-rotate(125deg) brightness(90%) contrast(93%);
+			}
+		}
+	}
 `;
 
 export const StyledButton = styled.button`
@@ -23,21 +44,4 @@ export const StyledButton = styled.button`
 	justify-content: flex-start;
 	align-items: initial;
 	margin-bottom: 20px;
-
-	${(props) =>
-		props.selected &&
-		css`
-			background-color: #fff;
-			color: #343e3d;
-		`}
-`;
-
-export const StyledIcon = styled.img`
-	max-width: 25px;
-	${(props) =>
-		props.selected &&
-		css`
-			filter: brightness(0) saturate(100%) invert(23%) sepia(25%) saturate(212%)
-				hue-rotate(125deg) brightness(90%) contrast(93%);
-		`};
 `;
