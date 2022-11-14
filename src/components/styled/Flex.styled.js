@@ -39,4 +39,8 @@ export const Flex = styled.div`
 		css`
 			flex-wrap: wrap;
 		`}
+
+		& .error {
+		margin-top: 100px;
+	}
 `;

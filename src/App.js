@@ -4,6 +4,7 @@ import GlobalStyles from "./components/styled/Global";
 import { ThemeProvider } from "styled-components";
 import Exams from "./pages/Exams";
 import Quiz from "./pages/Quiz";
+import MockTests from "./pages/MockTests";
 
 const theme = {
 	colors: {
@@ -28,6 +29,7 @@ function App() {
 					<Route path="/" element={<Dashboard />} />
 					<Route path="/exams" element={<Exams />} />
 					<Route path="/quiz" element={<Quiz />} />
+					<Route path="/tests/:id" element={<MockTests />} />
 				</Routes>
 			</ThemeProvider>
 		</Router>

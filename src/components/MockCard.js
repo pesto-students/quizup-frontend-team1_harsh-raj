@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { StyledMockCard, StyledIcon, Button } from "./styled/MockCard.styled";
 
-function MockCard({ item: { name, image, tests, id } }) {
+function MockCard({ item: { name, image, id } }) {
 	return (
 		<StyledMockCard>
 			<StyledIcon>
