@@ -17,7 +17,7 @@ function MockTests() {
 				<Sidebar />
 				<Container>
 					<Flex searchbar>
-						<h1>Explore all tests for exam</h1>
+						<h1>Explore test from {exam.name}</h1>
 						<Searchbar />
 					</Flex>
 					<Flex wrap>
