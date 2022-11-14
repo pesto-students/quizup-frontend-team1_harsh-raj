@@ -3,6 +3,32 @@ const examData = [
 		id: "1",
 		name: "SSC Exams",
 		image: "ssc.svg",
+		tests: [
+			{
+				id: 1,
+				name: "SSC CGL",
+			},
+			{
+				id: 2,
+				name: "SSC CHSL",
+			},
+			{
+				id: 3,
+				name: "SSC CPO",
+			},
+			{
+				id: 4,
+				name: "SSC MTS",
+			},
+			{
+				id: 5,
+				name: "SSC JE EE",
+			},
+			{
+				id: 6,
+				name: "SSC JE CE",
+			},
+		],
 	},
 	{
 		id: "2",
