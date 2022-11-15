@@ -7,6 +7,18 @@ const examData = [
 			{
 				id: 1,
 				name: "SSC CGL",
+				noq: 40,
+				time: 60,
+				sections: [
+					{
+						name: "quant",
+						noq: 20,
+					},
+					{
+						name: "verbal",
+						no_of_ques: 20,
+					},
+				],
 			},
 			{
 				id: 2,
