@@ -12,13 +12,37 @@ export const Flex = styled.div`
         padding: 10px;
         margin-bottom: 10px;
 
+        p {
+            color: #5B8E7D;
+            width: 60%;
+            font-size: 26px;
+            // padding-top: 10px 40px 10px 10px;
+        }
+        
+
+        ul {
+            margin: 5px;
+        }
+
+        h3 {
+            color: #FFD05A;
+            font-size: 16px;
+            padding: 10px;
+            
+        }
+
         h1 {
             font-size: 60px;
             width: 70%;
             padding: 10px;
         }
 
-    }
+        p {
+            color: #5B8E7D;
+            width: 60%;
+            font-size: 26px;
+            // padding-top: 10px 40px 10px 10px;
+        }
 
     h3 {
         color: #FFD05A;

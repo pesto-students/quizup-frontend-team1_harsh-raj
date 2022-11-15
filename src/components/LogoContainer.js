@@ -1,14 +1,12 @@
 import styled from "styled-components";
 
 export const LogoContainer = styled.div`
-    width: 80%;
-    margin-top: 15px;
+    // display: flex;
 
-    span {
-        font-size: 2.2rem;
+    div {
+        display: flex;
+        width="100px" 
     }
-
-    
 
 `
 
