@@ -2,7 +2,13 @@ import styled from "styled-components";
 
 export const Styledheader = styled.header`
     // background-color: #fff;
-    padding: 50px;
+    // padding: 50px;
+    background-color: ${({ theme }) => theme.colors.header};
+    padding: 40px 0;
+
+    @media(max-width: ${({theme}) => theme.mobile}) {
+        flex-direction: column;
+    }
 `
 
 export const Nav = styled.div`
@@ -22,9 +28,10 @@ export const Logo = styled.a`
 
     span {
         font-weight: 300;
+        width: 100%;
         font-size: 3rem;
+        margin-left: 5px;
     }
-
 `
 
 export const LogoImg = styled.img`
@@ -79,6 +86,10 @@ export const MenuLink = styled.a`
     }
 `
 export const Image = styled.img`
-    width: 750px;
-    margin-left: 40px;
+    width: 600px;
+    padding: 20px;
+    // margin-left: 40px;
+    @media(max-width: ${({theme}) => theme.mobile}) {
+        margin: 40px 0 30px;
+    }
 `
