@@ -1,29 +1,31 @@
 import styled from "styled-components";
 
-export const Flex = styled.div`
+export const SideContainer = styled.div`
     display: flex;
-    // align-items: center;
-    width: 100%;
+    align-items: center;
     padding: 40px;
-    justify-content: space-between;
+    width: 100%;
+    // justify-content: space-between;
 
     div {
+        display: flex;
         // width: 50%;
-        padding: 10px;
+        // padding: 10px;
         margin-bottom: 10px;
 
-        // p {
-        //     color: #5B8E7D;
-        //     width: 60%;
-        //     font-size: 26px;
-        //     // padding-top: 10px 40px 10px 10px;
-        // }
+        p {
+            color: #5B8E7D;
+            width: 60%;
+            font-size: 12px;
+            // padding-top: 10px 0px 0x 20px;
+            margin-left: 20px;
+            text-align: left;
+
+        }
         
 
         ul {
             margin: 5px;
-
-            
         }
 
         
@@ -33,8 +35,6 @@ export const Flex = styled.div`
             width: 70%;
             padding: 10px;
         }
-
-        
 
         // p {
         //     color: #5B8E7D;
@@ -49,13 +49,19 @@ export const Flex = styled.div`
         color: #FFD05A;
         font-size: 16px;
         // padding: 10px;
+        text-align: left;
         margin-bottom: 10px;
-        width: 100%;
+
         
     }
 
-    li {
-        font-Size: 14px;
+    ul {
+        p {
+            text-align: left;
+            padding: 0px 0px 20px 0px;
+            font-size: 14px;
+            width: 70%;
+        }
     }
 
     & > div,
