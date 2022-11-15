@@ -15,32 +15,32 @@ function Sidebar() {
 						</Flex>
 						<NavLink to={"/"}>
 							<StyledButton selected>
-								<img src="./images/home_icon.svg" alt="Home icon" selected />
+								<img src="/images/home_icon.svg" alt="Home icon" selected />
 								Home
 							</StyledButton>
 						</NavLink>
 						<NavLink to={"/exams"}>
 							<StyledButton className="active">
-								<img src="./images/mocktest_icon.svg" alt="Mock test icon" />
+								<img src="/images/mocktest_icon.svg" alt="Mock test icon" />
 								Mock Test
 							</StyledButton>
 						</NavLink>
 						<NavLink to={"/quiz"}>
 							<StyledButton>
-								<img src="./images/quiz_icon.svg" alt="Quiz icon" />
+								<img src="/images/quiz_icon.svg" alt="Quiz icon" />
 								Quiz
 							</StyledButton>
 						</NavLink>
 						<NavLink to={"/profile"}>
 							<StyledButton>
-								<img src="./images/profile_icon.svg" alt="Profile icon" />
+								<img src="/images/profile_icon.svg" alt="Profile icon" />
 								Profile
 							</StyledButton>
 						</NavLink>
 						<NavLink to={"/leaderboard"}>
 							<StyledButton>
 								<img
-									src="./images/leaderboard_icon.svg"
+									src="/images/leaderboard_icon.svg"
 									alt="Leaderboard icon"
 								/>
 								Leaderboard
@@ -50,7 +50,7 @@ function Sidebar() {
 					<div>
 						<Link to={"/logout"}>
 							<StyledButton bg="#FFD05A" color="#343e3d">
-								<img src="./images/logout_icon.svg" alt="Logout icon" />
+								<img src="/images/logout_icon.svg" alt="Logout icon" />
 								Logout
 							</StyledButton>
 						</Link>

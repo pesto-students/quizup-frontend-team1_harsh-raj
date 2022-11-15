@@ -11,7 +11,7 @@ const GlobalStyles = createGlobalStyle`
 
   body{
     font-family: 'Lato', sans-serif;
-    font-size: 1.15em;
+    font-size: 1.1em;
     margin: 0;
     padding: 0;
     color: ${({ theme }) => theme.colors.darkGreen}
