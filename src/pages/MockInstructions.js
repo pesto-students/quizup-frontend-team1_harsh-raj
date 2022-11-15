@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { StyledButton } from "../components/styled/Button.styled";
 import { Flex } from "../components/styled/Flex.styled";
 import { Container, Titlebar } from "../components/styled/Instructions.styled";
@@ -41,7 +41,9 @@ function MockInstructions() {
 					</li>
 					<li>Some more instructions...</li>
 				</ol>
-				<StyledButton color="#343E3D">Back</StyledButton>
+				<Link to={`/tests/${id}`}>
+					<StyledButton color="#343E3D">Back</StyledButton>
+				</Link>
 
 				<StyledButton>Start</StyledButton>
 			</Container>

@@ -6,6 +6,7 @@ import Exams from "./pages/Exams";
 import Quiz from "./pages/Quiz";
 import MockTests from "./pages/MockTests";
 import MockInstructions from "./pages/MockInstructions";
+import QuizDetails from "./pages/QuizDetails";
 
 const theme = {
 	colors: {
@@ -32,6 +33,7 @@ function App() {
 					<Route path="/quiz" element={<Quiz />} />
 					<Route path="/tests/:id" element={<MockTests />} />
 					<Route path="/instructions/:id" element={<MockInstructions />} />
+					<Route path="/quizdetails/:id" element={<QuizDetails />} />
 				</Routes>
 			</ThemeProvider>
 		</Router>
