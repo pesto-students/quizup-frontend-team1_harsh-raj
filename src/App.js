@@ -5,6 +5,7 @@ import { ThemeProvider } from "styled-components";
 import Exams from "./pages/Exams";
 import Quiz from "./pages/Quiz";
 import MockTests from "./pages/MockTests";
+import MockInstructions from "./pages/MockInstructions";
 
 const theme = {
 	colors: {
@@ -30,6 +31,7 @@ function App() {
 					<Route path="/exams" element={<Exams />} />
 					<Route path="/quiz" element={<Quiz />} />
 					<Route path="/tests/:id" element={<MockTests />} />
+					<Route path="/instructions/:id" element={<MockInstructions />} />
 				</Routes>
 			</ThemeProvider>
 		</Router>
