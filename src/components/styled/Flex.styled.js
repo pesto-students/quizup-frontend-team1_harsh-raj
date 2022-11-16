@@ -39,6 +39,12 @@ export const Flex = styled.div`
 		css`
 			flex-wrap: wrap;
 		`}
+    
+		${(props) =>
+			props.ProfileTile &&
+			css`
+			justify-content:space-between;
+			`}
 
 		& .error {
 		margin-top: 100px;

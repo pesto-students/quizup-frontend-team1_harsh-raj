@@ -10,16 +10,13 @@ export const EditProfile = () => {
     <>
       <Flex>
         <Sidebar />
-        <Flex searchbar>
+        <Container>
+        <Flex ProfileTile>
           <h1>Edit Profile</h1>
-        </Flex>
-        <Flex seeMoreBtn>
           <Link to={"/profile"}>
             <StyledButton>SAVE</StyledButton>
           </Link>
         </Flex>
-
-        <Container>
           <EditPofileCard />
         </Container>
       </Flex>

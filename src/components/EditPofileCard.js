@@ -22,7 +22,9 @@ export const EditPofileCard = () => {
               <input type="text" placeholder="Enter Skills" name=""/>
             </td>
           </tr>
+          <br/>
           <h3>Bank details</h3>
+          <br/>
           <tr>
             <td>
               Account No:

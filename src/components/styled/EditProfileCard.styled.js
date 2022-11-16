@@ -3,8 +3,7 @@ import styled from "styled-components";
 export const StyledEditProfileCard =styled.div`
 display:flex;
 justify-content:center;
-
-
+align-items:center;
 height:300px;
 width:800px;
 

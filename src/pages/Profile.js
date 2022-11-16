@@ -11,15 +11,13 @@ export const Profile = () => {
     <>
       <Flex>
         <Sidebar />
-        <Flex searchbar>
-          <h1>Profile</h1>
-        </Flex>
-        <Flex seeMoreBtn>
+        <Container>
+        <Flex ProfileTile>
+          <h1>My Profile</h1>
           <Link to={"/profile/edit"}>
             <StyledButton>Edit Profile</StyledButton>
           </Link>
         </Flex>
-        <Container>
           <ProfileCard />
         </Container>
       </Flex>
