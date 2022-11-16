@@ -7,6 +7,8 @@ import Quiz from "./pages/Quiz";
 import MockTests from "./pages/MockTests";
 import MockInstructions from "./pages/MockInstructions";
 import QuizDetails from "./pages/QuizDetails";
+import { Profile } from "./pages/Profile";
+import { EditProfile } from "./pages/EditProfile";
 
 const theme = {
 	colors: {
@@ -34,6 +36,8 @@ function App() {
 					<Route path="/tests/:id" element={<MockTests />} />
 					<Route path="/instructions/:id" element={<MockInstructions />} />
 					<Route path="/quizdetails/:id" element={<QuizDetails />} />
+					<Route path="/profile" element={<Profile/>} />
+					<Route path="/profile/edit" element={<EditProfile/>} />
 				</Routes>
 			</ThemeProvider>
 		</Router>
