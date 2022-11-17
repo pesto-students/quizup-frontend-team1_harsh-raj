@@ -1,12 +1,15 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Dashboard from "./pages/Dashboard";
+
 import GlobalStyles from "./components/styled/Global";
 import { ThemeProvider } from "styled-components";
-import Exams from "./pages/Exams";
-import Quiz from "./pages/Quiz";
-import MockTests from "./pages/MockTests";
-import MockInstructions from "./pages/MockInstructions";
-import QuizDetails from "./pages/QuizDetails";
+
+import Create from "./pages/CreatePage";
+import Delete from "./pages/DeletePage";
+import AdminDashboard from "./pages/AdminDashboard"
+import CreateMockTest from "./pages/CreateMockTest";
+import CreateQuizTest from "./pages/CreateQuizTest";
+import DeleteMock from "./pages/DeleteMock";
+import DeleteQuiz from "./pages/DeleteQuiz";
 
 const theme = {
 	colors: {
@@ -18,6 +21,7 @@ const theme = {
 		white: "#FFFFFF",
 		mockCard: "#FFD05A4D",
 		quizCard: "#5B8E7D33",
+		
 	},
 	mobile: "768px",
 };
@@ -28,12 +32,14 @@ function App() {
 			<ThemeProvider theme={theme}>
 				<GlobalStyles />
 				<Routes>
-					<Route path="/" element={<Dashboard />} />
-					<Route path="/exams" element={<Exams />} />
-					<Route path="/quiz" element={<Quiz />} />
-					<Route path="/tests/:id" element={<MockTests />} />
-					<Route path="/instructions/:id" element={<MockInstructions />} />
-					<Route path="/quizdetails/:id" element={<QuizDetails />} />
+				
+					<Route path="/" element={<AdminDashboard />} />
+					<Route path="/create" element={<Create />} />
+					<Route path="/create/mock" element={<CreateMockTest />} />
+					<Route path="/create/quiz" element={<CreateQuizTest />} />
+					<Route path="/delete" element={<Delete />} />
+					<Route path="/delete/mock" element={<DeleteMock />} />
+					<Route path="/delete/quiz" element={<DeleteQuiz />} />
 				</Routes>
 			</ThemeProvider>
 		</Router>
@@ -41,3 +47,19 @@ function App() {
 }
 
 export default App;
+
+
+// import Dashboard from "./pages/Dashboard";
+// import Exams from "./pages/Exams";
+// import Quiz from "./pages/Quiz";
+// import MockTests from "./pages/MockTests";
+// import MockInstructions from "./pages/MockInstructions";
+// import QuizDetails from "./pages/QuizDetails";
+
+
+	// {/* <Route path="/" element={<Dashboard />} /> */}
+	// <Route path="/exams" element={<Exams />} />
+	// <Route path="/quiz" element={<Quiz />} />
+	// <Route path="/tests/:id" element={<MockTests />} />
+	// <Route path="/instructions/:id" element={<MockInstructions />} />
+	// <Route path="/quizdetails/:id" element={<QuizDetails />} />

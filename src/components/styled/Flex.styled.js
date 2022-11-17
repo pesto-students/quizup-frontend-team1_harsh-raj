@@ -40,6 +40,23 @@ export const Flex = styled.div`
 			flex-wrap: wrap;
 		`}
 
+		${(props) =>
+			props.column &&
+			css`
+		  
+		  flex-direction:column;
+			align-items:flex-end;
+		
+			`}
+
+		${(props) =>
+			props.barGraph &&
+			css`
+			justify-content:flex-start;
+		
+		
+			`}
+
 		& .error {
 		margin-top: 100px;
 	}

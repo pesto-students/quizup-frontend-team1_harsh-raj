@@ -19,31 +19,16 @@ function Sidebar() {
 								Home
 							</StyledButton>
 						</NavLink>
-						<NavLink to={"/exams"}>
+						<NavLink to={"/create"}>
 							<StyledButton className="active">
-								<img src="/images/mocktest_icon.svg" alt="Mock test icon" />
-								Mock Test
+								<img src="/images/admin-dashboard/Plus.svg" alt="Mock test icon" />
+								Create
 							</StyledButton>
 						</NavLink>
-						<NavLink to={"/quiz"}>
+						<NavLink to={"/Delete"}>
 							<StyledButton>
-								<img src="/images/quiz_icon.svg" alt="Quiz icon" />
-								Quiz
-							</StyledButton>
-						</NavLink>
-						<NavLink to={"/profile"}>
-							<StyledButton>
-								<img src="/images/profile_icon.svg" alt="Profile icon" />
-								Profile
-							</StyledButton>
-						</NavLink>
-						<NavLink to={"/leaderboard"}>
-							<StyledButton>
-								<img
-									src="/images/leaderboard_icon.svg"
-									alt="Leaderboard icon"
-								/>
-								Leaderboard
+								<img src="/images/admin-dashboard/Substract.svg" alt="Quiz icon" />
+								Delete
 							</StyledButton>
 						</NavLink>
 					</div>
