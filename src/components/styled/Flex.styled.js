@@ -40,7 +40,21 @@ export const Flex = styled.div`
 			flex-wrap: wrap;
 		`}
 
+		${(props) =>
+			props.loginpage &&
+			css`
+		
+      flex-direction: column;
+      align-items: center;
+			`}
+	
+
 		& .error {
 		margin-top: 100px;
 	}
 `;
+
+
+// display:flex;
+// justify-content:center;
+// font-size:30px;

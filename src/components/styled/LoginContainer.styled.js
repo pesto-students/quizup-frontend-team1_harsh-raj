@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 export const StyledLoginContainer = styled.div`
+
 height: 350px;
 width: 400px;
-
 border-radius: 20px;
 background-color:#FFD05A33;
 
@@ -20,7 +20,10 @@ button{
   background-color:white;
   cursor: pointer;
   }
+`
+export const StyledLoginTitle=styled.div`
 
-
-
+img{
+  width:40px;
+}
 `
