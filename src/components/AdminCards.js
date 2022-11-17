@@ -1,15 +1,14 @@
 import {
-  StyledAdminCardsContainer,
   NumberOfCard,
   StyleTrendingCard,
-  StyledBarGraph
+  StyledBarGraph,
 } from "../components/styled/AdminCardsContainer.styled";
+import BarChart from "./styled/BarChart";
 import { Flex } from "./styled/Flex.styled";
 
 function AdminCards() {
   return (
-    <StyledAdminCardsContainer>
-       
+    <>
       {/* First Three Cards in Row */}
       <Flex>
         <NumberOfCard>
@@ -26,43 +25,39 @@ function AdminCards() {
         </NumberOfCard>
       </Flex>
       {/* First Three Cards in Row */}
-  
 
-       {/* Two Cards of trending Column */}
-       <Flex column>
-          <StyleTrendingCard >
-            <p>Trending topics Mock tests</p>
-            <p>1.UPSC Civil Services</p>
-            <p>2.SBI PO</p>
-            <p>3.CTET</p>
-            <p>4.NDA</p>
-            <p>CDS</p>
-          </StyleTrendingCard>
+      {/* Two Cards of trending Column */}
+      <Flex column>
+        <StyleTrendingCard>
+          <p>Trending topics Mock tests</p>
+          <p>1.UPSC Civil Services</p>
+          <p>2.SBI PO</p>
+          <p>3.CTET</p>
+          <p>4.NDA</p>
+          <p>5.CDS</p>
+        </StyleTrendingCard>
 
-          <StyleTrendingCard>
-            <p>Trending topics Mock tests</p>
-            <p>1.TypeScript</p>
-            <p>2.Pythom</p>
-            <p>3.React</p>
-            <p>4.Java</p>
-            <p>5.JavaScrit</p>
-          </StyleTrendingCard>
+        <StyleTrendingCard>
+          <p>Trending topics Mock tests</p>
+          <p>1.TypeScript</p>
+          <p>2.Pythom</p>
+          <p>3.React</p>
+          <p>4.Java</p>
+          <p>5.JavaScrit</p>
+        </StyleTrendingCard>
       </Flex>
-       {/* Two Cards of trending Column */}
+      {/* Two Cards of trending Column */}
 
-       {/* Bar Chart */}
-      
+      {/* Bar Chart */}
+
       <Flex barGraph>
         <StyledBarGraph>
-         <h1>Bar Graph</h1>
+          <BarChart />
         </StyledBarGraph>
       </Flex>
-      
-      {/* Bar Chart */}
-       
-     
 
-    </StyledAdminCardsContainer>
+      {/* Bar Chart */}
+    </>
   );
 }
 

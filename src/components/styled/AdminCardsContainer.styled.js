@@ -1,9 +1,5 @@
 import styled from "styled-components";
 
-export const StyledAdminCardsContainer = styled.div`
-
-`;
-
 // First Three Cards in Row
 export const NumberOfCard = styled.div`
   width: 175px;
@@ -23,7 +19,7 @@ export const NumberOfCard = styled.div`
   }
 `;
 
-// Trending Column 
+// Trending Column
 export const StyleTrendingCard = styled.div`
   width: 175px;
   height: 175px;
@@ -34,17 +30,19 @@ export const StyleTrendingCard = styled.div`
   box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.1);
 `;
 
-
 // BarGraph Section
 
-export const StyledBarGraph=styled.div`
-  width: 500px;
-  height: 200px;
+// Graph Background Container
+export const StyledBarGraph = styled.div`
+  width: 600px;
+  height: 300px;
   border-radius: 15px;
-  background-color: rgba(91, 142, 125, 0.2);
+  background-color: rgba(255, 208, 90, 0.1);
   padding: 15px;
   margin-top: 50px;
   box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.1);
-
-`
-
+`;
+// Graph itself Tag in ./styled/BarChart
+export const ChartBox = styled.div`
+  width: 550px;
+`;
