@@ -1,20 +1,32 @@
+import { Link } from "react-router-dom";
+import { SelectQuizTopic } from "../components/Select";
 import Sidebar from "../components/Sidebar";
-import { Container } from "../components/styled/Container.styled";
+import { StyledButton } from "../components/styled/Button.styled";
 import { Flex } from "../components/styled/Flex.styled";
+import { Container, StyledInputTime } from "../components/styled/Select.styled";
 
 function CreateQuizTest() {
   return (
-      
     <Flex>
-      <Sidebar/>
+      <Sidebar />
       <Container>
         <h1>Create Quiz</h1>
-        <h3>1. Choose a Quiz Topic</h3>
-        <h3>2. Enter Time Limit</h3>
+        <ol>
+          <li value="1">Choose a Quiz Topic</li>
+          <SelectQuizTopic />
+          <li>Enter Time Limit</li>
+          <StyledInputTime
+            type="text"
+            placeholder="Enter Time in Minutes"
+            name="Time"
+          />
+        </ol>
+        <Link to={"/create/quiz/quizqueMCQ"}>
+        <StyledButton>Continue</StyledButton>
+        </Link>
       </Container>
     </Flex>
-
-   );
+  );
 }
 
 export default CreateQuizTest;

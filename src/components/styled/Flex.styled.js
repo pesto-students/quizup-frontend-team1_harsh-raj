@@ -43,19 +43,16 @@ export const Flex = styled.div`
 		${(props) =>
 			props.column &&
 			css`
-		  
 		  flex-direction:column;
 			align-items:flex-end;
-		
 			`}
 
 		${(props) =>
-			props.barGraph &&
+			props.barChart &&
 			css`
-			justify-content:flex-start;
-		
-		
+	
 			`}
+			
 
 		& .error {
 		margin-top: 100px;

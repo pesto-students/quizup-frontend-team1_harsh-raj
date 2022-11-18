@@ -10,6 +10,9 @@ import CreateMockTest from "./pages/CreateMockTest";
 import CreateQuizTest from "./pages/CreateQuizTest";
 import DeleteMock from "./pages/DeleteMock";
 import DeleteQuiz from "./pages/DeleteQuiz";
+import MockQuePanel from "./pages/MockQuePanel";
+import QuizQueMCQ from "./pages/QuizQueMCQ";
+import QuizQueTF from "./pages/QuizQueT&F";
 
 const theme = {
 	colors: {
@@ -36,7 +39,14 @@ function App() {
 					<Route path="/" element={<AdminDashboard />} />
 					<Route path="/create" element={<Create />} />
 					<Route path="/create/mock" element={<CreateMockTest />} />
+					<Route path="/create/mock/mockquestionpanel" element={<MockQuePanel />} />
+
+
 					<Route path="/create/quiz" element={<CreateQuizTest />} />
+					<Route path="/create/quiz/quizqueMCQ" element={<QuizQueMCQ />} />
+					<Route path="/create/quiz/quizqueT&F" element={<QuizQueTF />} />
+
+					
 					<Route path="/delete" element={<Delete />} />
 					<Route path="/delete/mock" element={<DeleteMock />} />
 					<Route path="/delete/quiz" element={<DeleteQuiz />} />

@@ -24,33 +24,37 @@ function AdminCards() {
           <h4>12</h4>
         </NumberOfCard>
       </Flex>
+
       {/* First Three Cards in Row */}
 
       {/* Two Cards of trending Column */}
       <Flex column>
         <StyleTrendingCard>
           <p>Trending topics Mock tests</p>
-          <p>1.UPSC Civil Services</p>
-          <p>2.SBI PO</p>
-          <p>3.CTET</p>
-          <p>4.NDA</p>
-          <p>5.CDS</p>
+          <ol>
+            <li value="1">UPSC</li>
+            <li>SBI PO</li>
+            <li>CTET</li>
+            <li>NDA </li>
+            <li>CDS</li>
+          </ol>
         </StyleTrendingCard>
 
         <StyleTrendingCard>
-          <p>Trending topics Mock tests</p>
-          <p>1.TypeScript</p>
-          <p>2.Pythom</p>
-          <p>3.React</p>
-          <p>4.Java</p>
-          <p>5.JavaScrit</p>
+          <p>Trending topics Quiz tests</p>
+          <ol>
+            <li value="1">TypeScript</li>
+            <li>Python</li>
+            <li>React</li>
+            <li>Java </li>
+            <li>JavaScrit</li>
+          </ol>
         </StyleTrendingCard>
       </Flex>
       {/* Two Cards of trending Column */}
 
       {/* Bar Chart */}
-
-      <Flex barGraph>
+      <Flex barChart>
         <StyledBarGraph>
           <BarChart />
         </StyledBarGraph>
@@ -62,3 +66,18 @@ function AdminCards() {
 }
 
 export default AdminCards;
+
+// <StyleTrendingCard>
+// <p>Trending topics Mock tests</p>
+// <p>1.UPSC Civil Services</p>
+// <p>2.SBI PO</p>
+// <p>3.CTET</p>
+// <p>4.NDA</p>
+// <p>5.CDS</p>
+// </StyleTrendingCard>
+
+// <p>1.TypeScript</p>
+// <p>2.</p>
+// <p>3.</p>
+// <p>4.</p>
+// <p>5.</p>

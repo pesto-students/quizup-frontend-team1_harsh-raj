@@ -25,8 +25,8 @@ export const StyledGreenButton=styled.button`
 width: 150px;
 height: 50px;
 padding: 10px;
-background-color:
-boarder:none;
+background-color:rgba(91, 142, 125, 0.3);
+border:none;
 border-radius: 10px;
 font-size: 1rem;
 cursor: pointer;
