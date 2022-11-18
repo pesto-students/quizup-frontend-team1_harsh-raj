@@ -52,6 +52,13 @@ export const Flex = styled.div`
 			css`
 	
 			`}
+
+			${(props) =>
+				props.MockQueForm &&
+				css`
+          justify-content:flex-start;	
+
+				`}
 			
 
 		& .error {
