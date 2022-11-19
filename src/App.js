@@ -8,6 +8,8 @@ import MockTests from "./pages/MockTests";
 import MockInstructions from "./pages/MockInstructions";
 import QuizDetails from "./pages/QuizDetails";
 import Leaderboard from "./pages/Leaderboard";
+import MockResult from "./components/MockResult"
+import LeaderboardQuiz from "./components/LeaderboardQuiz";
 
 const theme = {
 	colors: {
@@ -25,20 +27,24 @@ const theme = {
 
 function App() {
 	return (
-		<Router>
-			<ThemeProvider theme={theme}>
-				<GlobalStyles />
-				<Routes>
-					<Route path="/" element={<Dashboard />} />
-					<Route path="/exams" element={<Exams />} />
-					<Route path="/quiz" element={<Quiz />} />
-					<Route path="/tests/:id" element={<MockTests />} />
-					<Route path="/instructions/:id" element={<MockInstructions />} />
-					<Route path="/quizdetails/:id" element={<QuizDetails />} />
-					<Route path="/leaderboard" element={<Leaderboard />} />
-				</Routes>
-			</ThemeProvider>
-		</Router>
+		<>
+			<Router>
+				<ThemeProvider theme={theme}>
+					<GlobalStyles />
+					<Routes>
+						<Route path="/" element={<Dashboard />} />
+						<Route path="/exams" element={<Exams />} />
+						<Route path="/quiz" element={<Quiz />} />
+						<Route path="/tests/:id" element={<MockTests />} />
+						<Route path="/instructions/:id" element={<MockInstructions />} />
+						<Route path="/quizdetails/:id" element={<QuizDetails />} />
+						<Route path="/leaderboard" element={<Leaderboard />} />
+						<Route path="/result" element={<MockResult />} />
+						<Route path="/result/html" element={<LeaderboardQuiz />} />
+					</Routes>
+				</ThemeProvider>
+			</Router>
+		</>
 	);
 }
 
