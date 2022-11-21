@@ -1,16 +1,19 @@
-import { StyledLoginContainer,StyledLoginTitle } from "./styled/LoginContainer.styled";
+import {
+  StyledLoginContainer,
+  StyledLoginTitle,
+} from "./styled/LoginContainer.styled";
 
 export const LoginContainer = () => {
   return (
     <>
-    {/* LOGO WITH TITLE  */}
+      {/* LOGO WITH TITLE  */}
       <StyledLoginTitle>
         <img src="/images/Logo.svg" alt="logo" />
         <p>QuizUp</p>
       </StyledLoginTitle>
-    {/* LOGO WITH TITLE  */}
+      {/* LOGO WITH TITLE  */}
 
-     {/* LogIn Container */}
+      {/* LogIn Container */}
       <StyledLoginContainer>
         <h1> Let's sign you in!</h1>
         <p>
@@ -23,7 +26,7 @@ export const LoginContainer = () => {
         <input type="radio" name="continue_as" value="Admin" />
         <label>Admin</label>
         <br />
-        <button>Sign in with Google</button>
+        <button id="Google">Sign in with Google</button>
         <br />
         <button>Try as demo Student</button>
       </StyledLoginContainer>
