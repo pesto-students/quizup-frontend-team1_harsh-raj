@@ -19,15 +19,15 @@ function CreateMockTest() {
           <SelectMockTest />
           <li>Enter Time Limit</li>
           <StyledInputTime
-            type="text"
+            type="number"
             placeholder="Enter Time in Minutes"
             name="Time"
+            required
           />
         </ol>
         <Link to={"/create/mock/mockquestionpanel"}>
-        <StyledButton>Continue</StyledButton>
+          <StyledButton>Continue</StyledButton>
         </Link>
-        
       </Container>
     </Flex>
   );

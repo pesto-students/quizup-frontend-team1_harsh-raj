@@ -10,17 +10,17 @@ function QuizQueMCQ() {
       <Flex>
         <Sidebar />
         <Container>
-        <h1>Quiz name</h1>
-      
-      <QuizQueForm/>
-      
-      <Link to={"/create"}>
-        <StyledButton color="rgba(232, 113, 33, 1)">Exit</StyledButton>
-      </Link>
-      <Link to={"/create"}>
-        <StyledButton>Save</StyledButton>
-      </Link>
-      </Container>
+          <h1>Quiz name</h1>
+
+          <QuizQueForm />
+
+          <Link to={"/create"}>
+            <StyledButton color="rgba(232, 113, 33, 1)">Exit</StyledButton>
+          </Link>
+          <Link to={"/create/quiz/quizqueMCQ/quizqueT&F"}>
+            <StyledButton>Save</StyledButton>
+          </Link>
+        </Container>
       </Flex>
     </>
   );

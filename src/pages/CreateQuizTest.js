@@ -16,13 +16,14 @@ function CreateQuizTest() {
           <SelectQuizTopic />
           <li>Enter Time Limit</li>
           <StyledInputTime
-            type="text"
+            type="number"
             placeholder="Enter Time in Minutes"
             name="Time"
+            required
           />
         </ol>
         <Link to={"/create/quiz/quizqueMCQ"}>
-        <StyledButton>Continue</StyledButton>
+          <StyledButton>Continue</StyledButton>
         </Link>
       </Container>
     </Flex>

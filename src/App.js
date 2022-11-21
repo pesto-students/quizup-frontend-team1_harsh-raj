@@ -5,7 +5,7 @@ import { ThemeProvider } from "styled-components";
 
 import Create from "./pages/CreatePage";
 import Delete from "./pages/DeletePage";
-import AdminDashboard from "./pages/AdminDashboard"
+import AdminDashboard from "./pages/AdminDashboard";
 import CreateMockTest from "./pages/CreateMockTest";
 import CreateQuizTest from "./pages/CreateQuizTest";
 import DeleteMock from "./pages/DeleteMock";
@@ -15,49 +15,50 @@ import QuizQueMCQ from "./pages/QuizQueMCQ";
 import QuizQueTF from "./pages/QuizQueT&F";
 
 const theme = {
-	colors: {
-		darkGreen: "#343E3D",
-		lightGreen: "#5B8E7D",
-		orange: "#E87121",
-		darkYellow: "#FF9400",
-		lightYellow: "#FFD05A",
-		white: "#FFFFFF",
-		mockCard: "#FFD05A4D",
-		quizCard: "#5B8E7D33",
-		
-	},
-	mobile: "768px",
+  colors: {
+    darkGreen: "#343E3D",
+    lightGreen: "#5B8E7D",
+    orange: "#E87121",
+    darkYellow: "#FF9400",
+    lightYellow: "#FFD05A",
+    white: "#FFFFFF",
+    mockCard: "#FFD05A4D",
+    quizCard: "#5B8E7D33",
+  },
+  mobile: "768px",
 };
 
 function App() {
-	return (
-		<Router>
-			<ThemeProvider theme={theme}>
-				<GlobalStyles />
-				<Routes>
-				
-					<Route path="/" element={<AdminDashboard />} />
-					<Route path="/create" element={<Create />} />
-					<Route path="/create/mock" element={<CreateMockTest />} />
-					<Route path="/create/mock/mockquestionpanel" element={<MockQuePanel />} />
+  return (
+    <Router>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <Routes>
+          <Route path="/" element={<AdminDashboard />} />
+          <Route path="/create" element={<Create />} />
+          <Route path="/create/mock" element={<CreateMockTest />} />
+          <Route
+            path="/create/mock/mockquestionpanel"
+            element={<MockQuePanel />}
+          />
 
+          <Route path="/create/quiz" element={<CreateQuizTest />} />
+          <Route path="/create/quiz/quizqueMCQ" element={<QuizQueMCQ />} />
+          <Route
+            path="/create/quiz/quizqueMCQ/quizqueT&F"
+            element={<QuizQueTF />}
+          />
 
-					<Route path="/create/quiz" element={<CreateQuizTest />} />
-					<Route path="/create/quiz/quizqueMCQ" element={<QuizQueMCQ />} />
-					<Route path="/create/quiz/quizqueT&F" element={<QuizQueTF />} />
-
-					
-					<Route path="/delete" element={<Delete />} />
-					<Route path="/delete/mock" element={<DeleteMock />} />
-					<Route path="/delete/quiz" element={<DeleteQuiz />} />
-				</Routes>
-			</ThemeProvider>
-		</Router>
-	);
+          <Route path="/delete" element={<Delete />} />
+          <Route path="/delete/mock" element={<DeleteMock />} />
+          <Route path="/delete/quiz" element={<DeleteQuiz />} />
+        </Routes>
+      </ThemeProvider>
+    </Router>
+  );
 }
 
 export default App;
-
 
 // import Dashboard from "./pages/Dashboard";
 // import Exams from "./pages/Exams";
@@ -66,10 +67,9 @@ export default App;
 // import MockInstructions from "./pages/MockInstructions";
 // import QuizDetails from "./pages/QuizDetails";
 
-
-	// {/* <Route path="/" element={<Dashboard />} /> */}
-	// <Route path="/exams" element={<Exams />} />
-	// <Route path="/quiz" element={<Quiz />} />
-	// <Route path="/tests/:id" element={<MockTests />} />
-	// <Route path="/instructions/:id" element={<MockInstructions />} />
-	// <Route path="/quizdetails/:id" element={<QuizDetails />} />
+// {/* <Route path="/" element={<Dashboard />} /> */}
+// <Route path="/exams" element={<Exams />} />
+// <Route path="/quiz" element={<Quiz />} />
+// <Route path="/tests/:id" element={<MockTests />} />
+// <Route path="/instructions/:id" element={<MockInstructions />} />
+// <Route path="/quizdetails/:id" element={<QuizDetails />} />
