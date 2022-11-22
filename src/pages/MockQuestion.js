@@ -14,7 +14,9 @@ function MockQuestion() {
 			</Titlebar>
 			<Flex>
 				<Container>
-					<div>Question div</div>
+					<div className="question-no">Question No. 1</div>
+					<div className="question">Sample question</div>
+					<div className="answers"></div>
 				</Container>
 				<Infobar />
 			</Flex>

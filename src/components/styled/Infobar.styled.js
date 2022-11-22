@@ -37,7 +37,7 @@ export const QuestionBox = styled.div`
 	height: 30px;
 	background-color: lightseagreen;
 	border-radius: 10px;
-	margin-right: 7px;
+	margin-right: 8px;
 	margin-bottom: 10px;
 	text-align: center;
 	padding: 5px 0;
