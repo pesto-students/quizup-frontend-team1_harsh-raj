@@ -2,11 +2,10 @@ import styled from "styled-components";
 
 export const StyledTable = styled.table`
 	margin-top: 50px;
-	width: 70%;
+	width: ${(props) => props.width || "70%"};
 
 	th {
 		padding: 20px 0;
-		/* text-align: left; */
 		font-size: 24px;
 		border-bottom: 1px solid ${({ theme }) => theme.colors.lightGreen};
 	}
