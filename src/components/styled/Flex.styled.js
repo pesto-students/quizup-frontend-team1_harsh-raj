@@ -31,7 +31,7 @@ export const Flex = styled.div`
 		props.seeMoreBtn &&
 		css`
 			align-items: center;
-			text-align: center;
+			justify-content: space-between;
 		`}
 
 		${(props) =>
