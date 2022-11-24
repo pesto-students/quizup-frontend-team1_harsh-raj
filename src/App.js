@@ -35,7 +35,7 @@ function App() {
 					<Route path="/tests/:id" element={<MockTests />} />
 					<Route path="/instructions/:id" element={<MockInstructions />} />
 					<Route path="/quizdetails/:id" element={<QuizDetails />} />
-					<Route path="/logout" element={<LoginPage/>} />
+					<Route path="/login" element={<LoginPage />} />
 				</Routes>
 			</ThemeProvider>
 		</Router>
