@@ -11,3 +11,10 @@ export const LogoText = styled.p`
 	margin-bottom: 50px;
 	font-weight: 300;
 `;
+
+export const Logotext = styled.p`
+	// color: black;
+	font-size: 2rem;
+	margin-bottom: 50px;
+	font-weight: 300;
+`;

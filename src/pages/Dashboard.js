@@ -6,6 +6,7 @@ import Searchbar from "../components/Searchbar";
 import MockSection from "../components/MockSection";
 import QuizSection from "../components/QuizSection";
 
+
 function Dashboard() {
 	return (
 		<>
