@@ -6,7 +6,14 @@ export const Logo = styled.img`
 `;
 
 export const LogoText = styled.p`
-	color: ${({ theme }) => theme.colors.white};
+	color: ${({ color }) => color || "#fff"};
+	font-size: 2rem;
+	margin-bottom: 50px;
+	font-weight: 300;
+`;
+
+export const Logotext = styled.p`
+	// color: black;
 	font-size: 2rem;
 	margin-bottom: 50px;
 	font-weight: 300;

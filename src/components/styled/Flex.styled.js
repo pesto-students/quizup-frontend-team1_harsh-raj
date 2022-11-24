@@ -30,8 +30,8 @@ export const Flex = styled.div`
 		${(props) =>
 		props.seeMoreBtn &&
 		css`
-			justify-content: space-between;
 			align-items: center;
+			justify-content: space-between;
 		`}
 
 		${(props) =>
@@ -39,6 +39,18 @@ export const Flex = styled.div`
 		css`
 			flex-wrap: wrap;
 		`}
+
+		${(props) =>
+		props.radioBtn &&
+		css`
+			gap: 20px;
+			justify-content: center;
+
+			& input {
+				margin-right: 5px;
+			}
+		`}
+	
 
 		& .error {
 		margin-top: 100px;

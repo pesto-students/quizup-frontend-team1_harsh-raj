@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 import { StyledIcon, Button } from "./styled/MockCard.styled";
 import { StyledQuizCard } from "./styled/QuizCard.styled";
 
-function QuizCard({ item: { name, price, time, image } }) {
+function QuizCard({ item: { name, price, time, image, id } }) {
 	return (
 		<StyledQuizCard>
 			<div className="price">
@@ -12,7 +13,9 @@ function QuizCard({ item: { name, price, time, image } }) {
 			</StyledIcon>
 			<p>{name}</p>
 			<p className="time">{`${time} mins left`}</p>
-			<Button>Play Now</Button>
+			<Link to={`/quizdetails/${id}`}>
+				<Button>Play Now</Button>
+			</Link>
 		</StyledQuizCard>
 	);
 }
