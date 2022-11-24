@@ -7,9 +7,11 @@ import Quiz from "./pages/Quiz";
 import MockTests from "./pages/MockTests";
 import MockInstructions from "./pages/MockInstructions";
 import QuizDetails from "./pages/QuizDetails";
+import LoginPage from "./pages/LoginPage";
 import Leaderboard from "./pages/Leaderboard";
 import MockResult from "./components/MockResult"
 import LeaderboardQuiz from "./components/LeaderboardQuiz";
+
 
 const theme = {
 	colors: {
@@ -41,6 +43,7 @@ function App() {
 						<Route path="/leaderboard" element={<Leaderboard />} />
 						<Route path="/result" element={<MockResult />} />
 						<Route path="/result/html" element={<LeaderboardQuiz />} />
+            <Route path="/login" element={<LoginPage />} />
 					</Routes>
 				</ThemeProvider>
 			</Router>
