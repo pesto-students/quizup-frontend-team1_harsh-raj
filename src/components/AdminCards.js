@@ -1,68 +1,59 @@
 import {
-  NumberOfCard,
-  StyleTrendingCard,
-  StyledBarGraph,
-} from "../components/styled/AdminCardsContainer.styled";
+	AnalyticsCard,
+	TrendingCard,
+	StyledBarGraph,
+} from "./styled/AnalyticsCards.styled.";
 import BarChart from "./styled/BarChart";
 import { Flex } from "./styled/Flex.styled";
 
 function AdminCards() {
-  return (
-    <>
-      {/* First Three Cards in Row */}
-      <Flex>
-        <NumberOfCard>
-          <p>Mocktests attempted by users this month</p>
-          <h4>152</h4>
-        </NumberOfCard>
-        <NumberOfCard>
-          <p>Number of Mock tests</p>
-          <h4>25</h4>
-        </NumberOfCard>
-        <NumberOfCard>
-          <p>Number of Quizzes</p>
-          <h4>12</h4>
-        </NumberOfCard>
-      </Flex>
+	return (
+		<>
+			<Flex analytics>
+				<AnalyticsCard>
+					<h4>Mock tests attempted by users this month</h4>
+					<p>152</p>
+				</AnalyticsCard>
+				<AnalyticsCard>
+					<h4>Number of Mock tests</h4>
+					<p>25</p>
+				</AnalyticsCard>
+				<AnalyticsCard>
+					<h4>Number of Quizzes</h4>
+					<p>12</p>
+				</AnalyticsCard>
+				<TrendingCard>
+					<h4>Trending topics Mock tests</h4>
+					<div>
+						<ol>
+							<li>UPSC</li>
+							<li>SBI PO</li>
+							<li>CTET</li>
+							<li>NDA </li>
+							<li>CDS</li>
+						</ol>
+					</div>
+				</TrendingCard>
+			</Flex>
 
-      {/* First Three Cards in Row */}
+			<Flex barChart>
+				<StyledBarGraph>
+					<BarChart />
+				</StyledBarGraph>
 
-      {/* Two Cards of trending Column */}
-      <Flex column>
-        <StyleTrendingCard>
-          <p>Trending topics Mock tests</p>
-          <ol>
-            <li value="1">UPSC</li>
-            <li>SBI PO</li>
-            <li>CTET</li>
-            <li>NDA </li>
-            <li>CDS</li>
-          </ol>
-        </StyleTrendingCard>
-
-        <StyleTrendingCard>
-          <p>Trending topics Quiz tests</p>
-          <ol>
-            <li value="1">TypeScript</li>
-            <li>Python</li>
-            <li>React</li>
-            <li>Java </li>
-            <li>JavaScrit</li>
-          </ol>
-        </StyleTrendingCard>
-      </Flex>
-      {/* Two Cards of trending Column */}
-
-      {/* Bar Chart */}
-      <Flex barChart>
-        <StyledBarGraph>
-          <BarChart />
-        </StyledBarGraph>
-      </Flex>
-
-      {/* Bar Chart */}
-    </>
-  );
+				<TrendingCard>
+					<p>Trending topics Quiz tests</p>
+					<ol>
+						<li value="1">TypeScript</li>
+						<li>Python</li>
+						<li>React</li>
+						<li>Java </li>
+						<li>JavaScrit</li>
+					</ol>
+				</TrendingCard>
+			</Flex>
+		</>
+	);
 }
 
 export default AdminCards;

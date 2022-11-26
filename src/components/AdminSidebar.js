@@ -3,7 +3,7 @@ import { Flex } from "./styled/Flex.styled";
 import { Logo, LogoText } from "./styled/Logo.styled";
 import { NavLink, Link } from "react-router-dom";
 
-function Sidebar() {
+function AdminSidebar() {
 	return (
 		<>
 			<StyledSidebar>
@@ -13,37 +13,28 @@ function Sidebar() {
 							<Logo src="/images/logo-white.svg" alt="Quizup logo" />
 							<LogoText>QuizUp</LogoText>
 						</Flex>
-						<NavLink to={"/"}>
-							<StyledButton selected>
-								<img src="/images/home_icon.svg" alt="Home icon" selected />
+						<NavLink to={"/admin"}>
+							<StyledButton>
+								<img src="/images/home_icon.svg" alt="Home icon" />
 								Home
 							</StyledButton>
 						</NavLink>
-						<NavLink to={"/exams"}>
+						<NavLink to={"/create"}>
 							<StyledButton className="active">
-								<img src="/images/mocktest_icon.svg" alt="Mock test icon" />
-								Mock Test
+								<img
+									src="/images/admin-dashboard/Plus.svg"
+									alt="Mock test icon"
+								/>
+								Create
 							</StyledButton>
 						</NavLink>
-						<NavLink to={"/quiz"}>
-							<StyledButton>
-								<img src="/images/quiz_icon.svg" alt="Quiz icon" />
-								Quiz
-							</StyledButton>
-						</NavLink>
-						<NavLink to={"/profile"}>
-							<StyledButton>
-								<img src="/images/profile_icon.svg" alt="Profile icon" />
-								Profile
-							</StyledButton>
-						</NavLink>
-						<NavLink to={"/leaderboard"}>
+						<NavLink to={"/Delete"}>
 							<StyledButton>
 								<img
-									src="/images/leaderboard_icon.svg"
-									alt="Leaderboard icon"
+									src="/images/admin-dashboard/Substract.svg"
+									alt="Quiz icon"
 								/>
-								Leaderboard
+								Delete
 							</StyledButton>
 						</NavLink>
 					</div>
@@ -61,4 +52,4 @@ function Sidebar() {
 	);
 }
 
-export default Sidebar;
+export default AdminSidebar;

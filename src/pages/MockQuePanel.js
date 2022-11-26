@@ -6,26 +6,24 @@ import MockQueForm from "../components/MockQuePanel";
 import { Container } from "../components/styled/MockQuePanel.styled";
 
 function MockQuePanel() {
-  return (
-    <>
-      <Flex >
-        <Sidebar />
-       <Container>
-        <h1>Mock test name</h1>
-        <MockQueForm/>
-    
-      
+	return (
+		<>
+			<Flex>
+				<Sidebar />
+				<Container>
+					<h1>Mock test name</h1>
+					<MockQueForm />
 
-      <Link to={"/create"}>
-        <StyledButton color="rgba(232, 113, 33, 1)">Exit</StyledButton>
-      </Link>
-      <Link to={"/create"}>
-        <StyledButton>Save</StyledButton>
-      </Link>
-      </Container>
-      </Flex>
-    </>
-  );
+					<Link to={"/create"}>
+						<StyledButton color="rgba(232, 113, 33, 1)">Exit</StyledButton>
+					</Link>
+					<Link to={"/create"}>
+						<StyledButton>Save</StyledButton>
+					</Link>
+				</Container>
+			</Flex>
+		</>
+	);
 }
 
 export default MockQuePanel;

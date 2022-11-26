@@ -15,47 +15,39 @@ import QuizQueMCQ from "./pages/QuizQueMCQ";
 import QuizQueTF from "./pages/QuizQueT&F";
 
 const theme = {
-  colors: {
-    darkGreen: "#343E3D",
-    lightGreen: "#5B8E7D",
-    orange: "#E87121",
-    darkYellow: "#FF9400",
-    lightYellow: "#FFD05A",
-    white: "#FFFFFF",
-    mockCard: "#FFD05A4D",
-    quizCard: "#5B8E7D33",
-  },
-  mobile: "768px",
+	colors: {
+		darkGreen: "#343E3D",
+		lightGreen: "#5B8E7D",
+		orange: "#E87121",
+		darkYellow: "#FF9400",
+		lightYellow: "#FFD05A",
+		white: "#FFFFFF",
+		mockCard: "#FFD05A4D",
+		quizCard: "#5B8E7D33",
+	},
+	mobile: "768px",
 };
 
 function App() {
-  return (
-    <Router>
-      <ThemeProvider theme={theme}>
-        <GlobalStyles />
-        <Routes>
-          <Route path="/" element={<AdminDashboard />} />
-          <Route path="/create" element={<Create />} />
-          <Route path="/create/mock" element={<CreateMockTest />} />
-          <Route
-            path="/create/mock/mockquestionpanel"
-            element={<MockQuePanel />}
-          />
-
-          <Route path="/create/quiz" element={<CreateQuizTest />} />
-          <Route path="/create/quiz/quizqueMCQ" element={<QuizQueMCQ />} />
-          <Route
-            path="/create/quiz/quizqueMCQ/quizqueT&F"
-            element={<QuizQueTF />}
-          />
-
-          <Route path="/delete" element={<Delete />} />
-          <Route path="/delete/mock" element={<DeleteMock />} />
-          <Route path="/delete/quiz" element={<DeleteQuiz />} />
-        </Routes>
-      </ThemeProvider>
-    </Router>
-  );
+	return (
+		<Router>
+			<ThemeProvider theme={theme}>
+				<GlobalStyles />
+				<Routes>
+					<Route path="/admin" element={<AdminDashboard />} />
+					<Route path="/create" element={<Create />} />
+					<Route path="/create/mock" element={<CreateMockTest />} />
+					<Route path="/create/mock/question" element={<MockQuePanel />} />
+					<Route path="/create/quiz" element={<CreateQuizTest />} />
+					<Route path="/create/quiz/mcq" element={<QuizQueMCQ />} />
+					<Route path="/create/quiz/tf" element={<QuizQueTF />} />
+					<Route path="/delete" element={<Delete />} />
+					<Route path="/delete/mock" element={<DeleteMock />} />
+					<Route path="/delete/quiz" element={<DeleteQuiz />} />
+				</Routes>
+			</ThemeProvider>
+		</Router>
+	);
 }
 
 export default App;
