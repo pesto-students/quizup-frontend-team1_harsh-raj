@@ -47,7 +47,13 @@ export const Flex = styled.div`
 			align-items: flex-end;
 		`}
 
-		${(props) => props.barChart && css``}
+		${(props) =>
+		props.barChart &&
+		css`
+			justify-content: space-between;
+			align-content: flex-start;
+			margin-top: 20px;
+		`}
 
   
     ${(props) =>
@@ -55,13 +61,9 @@ export const Flex = styled.div`
 		css`
 			justify-content: space-between;
 			align-content: flex-start;
-			margin-top: 40px;
+			margin: 40px 0;
 		`}
-
-	
-				
-			
-
+    
 		& .error {
 		margin-top: 100px;
 	}

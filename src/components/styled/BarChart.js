@@ -1,10 +1,23 @@
-import Chart from "chart.js/auto";
 import React from "react";
+import Chart from "chart.js/auto";
 import { Bar } from "react-chartjs-2";
-import { ChartBox } from "./AnalyticsCards.styled.";
+import { ChartBox } from "./AnalyticsCards.styled";
 function BarChart() {
 	const data = {
-		labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+		labels: [
+			"Jan",
+			"Feb",
+			"Mar",
+			"Apr",
+			"May",
+			"Jun",
+			"Jul",
+			"Aug",
+			"Sept",
+			"Oct",
+			"Nov",
+			"Dec",
+		],
 		datasets: [
 			{
 				label: "Mock",
@@ -49,6 +62,7 @@ function BarChart() {
 				},
 			},
 		},
+		maintainAspectRatio: false,
 		scales: {
 			y: {
 				ticks: {
@@ -67,6 +81,8 @@ function BarChart() {
 	};
 	return (
 		<ChartBox>
+			{/* // 	<h4>User Attempts</h4> */}
+
 			<Bar data={data} options={options} />
 		</ChartBox>
 	);

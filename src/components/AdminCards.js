@@ -2,7 +2,7 @@ import {
 	AnalyticsCard,
 	TrendingCard,
 	StyledBarGraph,
-} from "./styled/AnalyticsCards.styled.";
+} from "./styled/AnalyticsCards.styled";
 import BarChart from "./styled/BarChart";
 import { Flex } from "./styled/Flex.styled";
 
@@ -36,15 +36,16 @@ function AdminCards() {
 				</TrendingCard>
 			</Flex>
 
+			<h2>Analytics</h2>
 			<Flex barChart>
 				<StyledBarGraph>
 					<BarChart />
 				</StyledBarGraph>
 
 				<TrendingCard>
-					<p>Trending topics Quiz tests</p>
+					<h4>Trending topics Quiz tests</h4>
 					<ol>
-						<li value="1">TypeScript</li>
+						<li>TypeScript</li>
 						<li>Python</li>
 						<li>React</li>
 						<li>Java </li>
