@@ -63,6 +63,12 @@ export const Flex = styled.div`
 			align-content: flex-start;
 			margin: 40px 0;
 		`}
+
+		${(props) =>
+		props.mockquestion &&
+		css`
+			justify-content: center;
+		`}
     
 		& .error {
 		margin-top: 100px;

@@ -1,44 +1,51 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  padding: 30px 50px;
+	flex-grow: 1;
+	padding: 30px 50px;
+	height: 100%;
 
-  button {
-    text-align: center;
-    font-size: 22px;
-    margin: 20px;
-    height: 40px;
-    width: 100px;
-  }
+	button {
+		text-align: center;
+		font-size: 20px;
+		margin: 20px;
+		height: 40px;
+		width: 100px;
+	}
 `;
 
-export const StyledMockForm = styled.form`
-  input {
-    diplay: flex;
-    justify-content: space-between;
-    text-align: center;
-    width: 300px;
-    height: 60px;
-  }
-  input[name="question"] {
-    width: 350px;
-    height: 100px;
-  }
-  input[name=" answer 1"] {
-    background: url(/images/admin-dashboard/tick.svg) right no-repeat;
-    background-size: 30px;
-  }
-  input[name="answer 2"] {
-    background: url(/images/admin-dashboard/tick.svg) right no-repeat;
-    background-size: 30px;
-  }
-  input[name="answer 3"] {
-    background: url(/images/admin-dashboard/tick.svg) right no-repeat;
-    background-size: 30px;
-  }
-  input[name="answer 4"] {
-    background: url(/images/admin-dashboard/tick.svg) right no-repeat;
-    background-size: 30px;
-    background-color: white;
-  }
+export const StyledMockForm = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	height: 70vh;
+	text-align: center;
+
+	& textarea {
+		border-radius: 10px;
+		width: 700px;
+		height: 200px;
+		padding: 10px 20px;
+		font-size: 1.5rem;
+		font-family: "Lato", sans-serif;
+		margin-bottom: 30px;
+		margin-left: 10px;
+	}
+
+	& input[type="text"] {
+		border-radius: 10px;
+		width: 250px;
+		height: 70px;
+		padding: 5px 10px;
+		font-family: "Lato", sans-serif;
+		font-size: 1.1rem;
+		margin-right: 30px;
+		margin-bottom: 20px;
+		border: 0.5px solid black;
+	}
+
+	& input[type="radio"] {
+		margin-right: 10px;
+	}
 `;
