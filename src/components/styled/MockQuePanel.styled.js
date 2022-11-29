@@ -45,6 +45,10 @@ export const StyledMockForm = styled.div`
 		border: 0.5px solid black;
 	}
 
+	& label.radiobtn {
+		margin-left: 10px;
+		margin-right: 70px;
+	}
 	& input[type="radio"] {
 		margin-right: 10px;
 	}

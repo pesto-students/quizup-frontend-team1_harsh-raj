@@ -5,7 +5,7 @@ import {
 	ButtonContainer,
 	StyledYellowButton,
 	StyledGreenButton,
-} from "../components/styled/ButtonConatiner.styled";
+} from "../components/styled/ButtonContainer.styled";
 import { Link } from "react-router-dom";
 
 function Create() {
