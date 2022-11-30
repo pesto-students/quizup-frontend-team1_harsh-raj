@@ -41,7 +41,28 @@ export const Flex = styled.div`
 		`}
 
 		${(props) =>
-		props.radioBtn &&
+		props.barChart &&
+		css`
+			justify-content: space-between;
+			align-content: flex-start;
+			margin-top: 20px;
+		`}
+  
+    ${(props) =>
+		props.analytics &&
+		css`
+			justify-content: space-between;
+			align-content: flex-start;
+			margin: 40px 0;
+		`}
+
+		${(props) =>
+		props.mockquestion &&
+		css`
+			justify-content: center;
+		`}
+    
+		${(props) => props.radioBtn &&
 		css`
 			gap: 20px;
 			justify-content: center;
@@ -51,7 +72,6 @@ export const Flex = styled.div`
 			}
 		`}
 	
-
 		& .error {
 		margin-top: 100px;
 	}
