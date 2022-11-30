@@ -30,8 +30,8 @@ export const Flex = styled.div`
 		${(props) =>
 		props.seeMoreBtn &&
 		css`
-			justify-content: space-between;
 			align-items: center;
+			justify-content: space-between;
 		`}
 
 		${(props) =>
@@ -41,20 +41,12 @@ export const Flex = styled.div`
 		`}
 
 		${(props) =>
-		props.column &&
-		css`
-			flex-direction: column;
-			align-items: flex-end;
-		`}
-
-		${(props) =>
 		props.barChart &&
 		css`
 			justify-content: space-between;
 			align-content: flex-start;
 			margin-top: 20px;
 		`}
-
   
     ${(props) =>
 		props.analytics &&
@@ -70,6 +62,16 @@ export const Flex = styled.div`
 			justify-content: center;
 		`}
     
+		${(props) => props.radioBtn &&
+		css`
+			gap: 20px;
+			justify-content: center;
+
+			& input {
+				margin-right: 5px;
+			}
+		`}
+	
 		& .error {
 		margin-top: 100px;
 	}

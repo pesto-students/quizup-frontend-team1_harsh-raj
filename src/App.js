@@ -13,6 +13,15 @@ import DeleteQuiz from "./pages/DeleteQuiz";
 import MockQuePanel from "./pages/MockQuePanel";
 import QuizQueMCQ from "./pages/QuizQueMCQ";
 import QuizQueTF from "./pages/QuizQueT&F";
+import Exams from "./pages/Exams";
+import Quiz from "./pages/Quiz";
+import MockTests from "./pages/MockTests";
+import MockInstructions from "./pages/MockInstructions";
+import QuizDetails from "./pages/QuizDetails";
+import LoginPage from "./pages/LoginPage";
+import Leaderboard from "./pages/Leaderboard";
+import MockResult from "./components/MockResult"
+import LeaderboardQuiz from "./components/LeaderboardQuiz";
 
 const theme = {
 	colors: {
@@ -44,9 +53,21 @@ function App() {
 					<Route path="/delete" element={<Delete />} />
 					<Route path="/delete/mock" element={<DeleteMock />} />
 					<Route path="/delete/quiz" element={<DeleteQuiz />} />
+					<Route path="/" element={<Dashboard />} />
+					<Route path="/exams" element={<Exams />} />
+					<Route path="/quiz" element={<Quiz />} />
+					<Route path="/tests/:id" element={<MockTests />} />
+					<Route path="/instructions/:id" element={<MockInstructions />} />
+					<Route path="/quizdetails/:id" element={<QuizDetails />} />
+					<Route path="/leaderboard" element={<Leaderboard />} />
+					<Route path="/result" element={<MockResult />} />
+					<Route path="/result/html" element={<LeaderboardQuiz />} />
+          <Route path="/login" element={<LoginPage />} />
 				</Routes>
-			</ThemeProvider>
-		</Router>
+				</ThemeProvider>
+			</Router>
+		</>
+
 	);
 }
 
