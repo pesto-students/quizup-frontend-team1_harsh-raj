@@ -6,7 +6,7 @@ export const Styledheader = styled.header`
     background-color: ${({ theme }) => theme.colors.header};
     padding: 40px 0;
 
-    @media(max-width: ${({theme}) => theme.mobile}) {
+    @media(max-width: ${({ theme }) => theme.mobile}) {
         flex-direction: column;
     }
 `
@@ -18,6 +18,8 @@ export const Nav = styled.div`
     justify-content: space-between;
     flex-wrap: wrap;
     background: white;
+    margin-left: 70px;
+    margin-right: 60px;
 `
 export const Logo = styled.a`
     padding: 1rem 0;
@@ -32,11 +34,21 @@ export const Logo = styled.a`
         font-size: 3rem;
         margin-left: 5px;
     }
+         @media (max-width: ${({ theme }) => theme.mobile}) {
+        // flex-direction: row;
+        // width: 70%;
+        text-align: center;
+		margin-right: 100px; 
+      }
 `
 
 export const LogoImg = styled.img`
     width: 65px;
 
+    @media (max-width: 768px) {
+        // display: flex;
+    flex-direction: column;
+    }
     
 `
 
@@ -87,9 +99,11 @@ export const MenuLink = styled.a`
 `
 export const Image = styled.img`
     width: 600px;
-    padding: 20px;
-    // margin-left: 40px;
-    @media(max-width: ${({theme}) => theme.mobile}) {
+    // padding: 40px;
+    // margin-left: 70px;
+    justify-content:
+
+    @media(max-width: ${({ theme }) => theme.mobile}) {
         margin: 40px 0 30px;
     }
 `

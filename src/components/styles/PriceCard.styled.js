@@ -5,9 +5,9 @@ export const StyledPriceCard = styled.div`
 	height: 450px;
 	border-radius: 10px;
 	background-color: white;
-	margin: 12px;
-	border: 2px solid grey;
+	margin: 20px 40px 0px 20px;
 	padding: 20px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 	
 
 	div {
@@ -33,6 +33,13 @@ export const StyledPriceCard = styled.div`
 		font-size: 16px;
 		// padding: 10px;
 	}
+
+	@media (max-width: ${({ theme }) => theme.mobile}) {
+        // flex-direction: column;
+        text-align: center;
+
+		margin-bottom: 20px; 
+      }
 `
 
 export const StyledPriceCard2 = styled.div`
@@ -40,13 +47,14 @@ export const StyledPriceCard2 = styled.div`
 	height: 450px;
 	border-radius: 10px;
 	background-color: #5B8E7D;
-	margin: 12px;
-	border: 2px solid grey;
+	margin: 20px 40px 0px 20px;
 	padding: 20px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
 	div {
 		display: flex;
-		margin-bottom: 40px;
+		margin-bottom: 30px;
+
 		
 	}
 	
@@ -57,7 +65,7 @@ export const StyledPriceCard2 = styled.div`
 	
 	h2 {
 		text-align: left;
-		margin-bottom: 30px;
+		margin-bottom: 20px;
 		
 	}
 	
@@ -67,4 +75,11 @@ export const StyledPriceCard2 = styled.div`
 		font-size: 16px;
 		// padding: 10px;
 	}
+
+	@media (max-width: ${({ theme }) => theme.mobile}) {
+        // flex-direction: column;
+        text-align: center;
+
+		margin-bottom: 20px; 
+      }
 `

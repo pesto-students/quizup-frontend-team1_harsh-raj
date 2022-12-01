@@ -6,7 +6,8 @@ export const StyledPriceBody = styled.div`
     // height: 20vh;
     // align-items: flex-end;
     justify-content: space-evenly;
-    padding: 30px
+    padding: 30px;
+    margin-bottom: 50px;
 
     
 `

@@ -4,28 +4,28 @@ export default function SocialIcons() {
     return (
         <div>
             <li>
-                <a href="https://twitter.com">
-                <FaTwitter />
+                <a href="https://twitter.com" >
+                    <FaTwitter color="#FFD05A" />
                 </a>
-                
+
             </li>
             <li>
                 <a href="https://facebook.com">
-                <FaFacebook />
+                    <FaFacebook color="#FFD05A" />
                 </a>
-                
+
             </li>
             <li>
                 <a href="https://linkedin.com">
-                <FaLinkedin />
+                    <FaLinkedin color="#FFD05A" />
                 </a>
-                
+
             </li>
             <li>
                 <a href="https://instagram.com">
-                <FaInstagram />
+                    <FaInstagram color="#FFD05A" />
                 </a>
-                
+
             </li>
         </div>
     )

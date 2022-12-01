@@ -32,5 +32,10 @@ export const GetButton = styled.button`
         opacity: 0.9;
         transfrom: scale(0.98);
     }
+
+        @media (max-width: ${({ theme }) => theme.mobile}) {
+        flex-direction: column;
+        text-align: center;
+      }
 `
 

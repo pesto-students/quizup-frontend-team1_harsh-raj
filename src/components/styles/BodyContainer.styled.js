@@ -11,4 +11,9 @@ export const BodyContainer = styled.div`
         color: #E87121;
         text-align: center;
     }
+
+    // @media (max-width: ${({ theme }) => theme.mobile}) {
+    //     flex-direction: column;
+    //     align-items: center;    
+    // }
 `

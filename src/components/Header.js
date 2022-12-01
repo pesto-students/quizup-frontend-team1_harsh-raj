@@ -1,7 +1,7 @@
 import { Styledheader, Nav, Logo, Rightcontainer, Menu, MenuLink, Image, LogoImg } from "./styles/Header.styled"
 import { Button, GetButton } from "./styles/Button.styled"
 import { useState } from "react"
-import {Flex} from './styles/Flex.styled'
+import { Flex } from './styles/Flex.styled'
 
 
 export default function Header() {
@@ -11,7 +11,7 @@ export default function Header() {
   return (
     <Styledheader>
       <Nav>
-        
+
         <Logo href=""><LogoImg src='./images/QuizUp-logo.svg' /><span>QuizUp</span></Logo>
         <Rightcontainer onClick={() => setIsOpen(!isOpen)}>
           <span></span>
@@ -38,7 +38,9 @@ export default function Header() {
           <GetButton>Get Started For Free</GetButton>
         </div>
 
-        <Image src='./images/Hero image.svg' alt='' />
+        <span>
+          <Image src='./images/Hero image.svg' alt='' />
+        </span>
       </Flex>
     </Styledheader>
   )
