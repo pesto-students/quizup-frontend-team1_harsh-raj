@@ -14,7 +14,11 @@ function MockQuePanel() {
 					<MockQueForm />
 
 					<Flex searchbar>
-						<button style={{ width: "300px" }}> Add another question</button>
+						<Link to={"/create/mock/question"}>
+							<StyledButton add color="#343E3D">
+								Add another question
+							</StyledButton>
+						</Link>
 
 						<div>
 							<Link to={"/create"}>

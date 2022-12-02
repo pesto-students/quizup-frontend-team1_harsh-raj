@@ -1,9 +1,9 @@
 import styled, { css } from "styled-components";
 
 export const StyledButton = styled.button`
-	width: ${(props) => props.width || "150px"};
+	width: ${({ wd }) => wd || "200px"};
 	height: 50px;
-	padding: 10px;
+	padding: 10px 20px;
 	background-color: ${({ color }) => color || "#5b8e7d"};
 	color: ${({ fontclr }) => fontclr || "white"};
 	border: none;
@@ -24,6 +24,13 @@ export const StyledButton = styled.button`
 				vertical-align: middle;
 			}
 		`}
+
+	${({ add }) =>
+		add &&
+		css`
+			width: fit-content !important;
+		`}
+
 	&:hover {
 		opacity: 0.9;
 	}

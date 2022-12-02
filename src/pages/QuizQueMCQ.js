@@ -15,12 +15,15 @@ function QuizQueMCQ() {
 					<QuizQueForm />
 
 					<Flex searchbar>
-						<button style={{ width: "300px" }}> Add another MCQ</button>
+						<Link to={"/create/quiz/mcq"}>
+							<StyledButton add color="#343E3D">
+								Add another MCQ
+							</StyledButton>
+						</Link>
 						<Link to={"/create/quiz/tf"}>
-							<button style={{ width: "300px" }}>
-								{" "}
+							<StyledButton add color="#343E3D">
 								Add another T/F question
-							</button>
+							</StyledButton>
 						</Link>
 
 						<div>

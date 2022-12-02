@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const StyledSidebar = styled.nav`
+	position: sticky;
+	top: 0;
+	bottom: 0;
 	height: 100vh;
 	max-width: 250px;
 	background-color: ${({ theme }) => theme.colors.darkGreen};

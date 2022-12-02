@@ -16,13 +16,14 @@ function QuizQueTF() {
 
 					<Flex searchbar>
 						<Link to={"/create/quiz/mcq"}>
-							<button style={{ width: "300px" }}> Add another MCQ</button>
+							<StyledButton add color="#343E3D">
+								Add another MCQ
+							</StyledButton>
 						</Link>
 						<Link to={"/create/quiz/tf"}>
-							<button style={{ width: "300px" }}>
-								{" "}
+							<StyledButton add color="#343E3D">
 								Add another T/F question
-							</button>
+							</StyledButton>
 						</Link>
 
 						<div>

@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { SelectQuizTopic } from "../components/Select";
 import AdminSidebar from "../components/AdminSidebar";
 import { StyledButton } from "../components/styled/Button.styled";
 import { Flex } from "../components/styled/Flex.styled";
@@ -12,20 +11,41 @@ function CreateQuizTest() {
 			<Container>
 				<h1>Create Quiz</h1>
 				<div className="wrapper">
-					<ol>
-						<li value="1">Choose a Quiz Topic</li>
-						<SelectQuizTopic />
-						<li>Enter Time Limit</li>
-						<StyledInput
-							type="number"
-							placeholder="Enter Time in Minutes"
-							name="Time"
-							required
-						/>
-					</ol>
-					<Link to={"/create/quiz/mcq"}>
-						<StyledButton>Continue</StyledButton>
-					</Link>
+					<form>
+						<ol>
+							<li value="1">Enter Quiz Name</li>
+							<StyledInput
+								type={"text"}
+								placeholder="Enter Quiz name"
+								name="title"
+								required
+							/>
+							<li>Enter Time Limit</li>
+							<StyledInput
+								type="number"
+								placeholder="Enter Time in Minutes"
+								name="time"
+								required
+							/>
+							<li>Enter price of the Quiz</li>
+							<StyledInput
+								type="number"
+								placeholder="Enter price in INR"
+								name="price"
+								required
+							/>
+							<li>Enter the Quiz image URL</li>
+							<StyledInput
+								type="text"
+								placeholder="Paste the image URL here"
+								name="image"
+								required
+							/>
+						</ol>
+						<Link to={"/create/quiz/mcq"}>
+							<StyledButton>Continue</StyledButton>
+						</Link>
+					</form>
 				</div>
 			</Container>
 		</Flex>
