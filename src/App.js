@@ -11,6 +11,8 @@ import LoginPage from "./pages/LoginPage";
 import Leaderboard from "./pages/Leaderboard";
 import MockResult from "./components/MockResult"
 import LeaderboardQuiz from "./components/LeaderboardQuiz";
+import LandingPage from "./pages/LandingPage";
+
 
 
 const theme = {
@@ -43,7 +45,8 @@ function App() {
 						<Route path="/leaderboard" element={<Leaderboard />} />
 						<Route path="/result" element={<MockResult />} />
 						<Route path="/result/html" element={<LeaderboardQuiz />} />
-            <Route path="/login" element={<LoginPage />} />
+						<Route path="/login" element={<LoginPage />} />
+						<Route path="/landingpage" element={<LandingPage />} />
 					</Routes>
 				</ThemeProvider>
 			</Router>
@@ -51,4 +54,4 @@ function App() {
 	);
 }
 
-export default App;
+export default App
