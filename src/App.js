@@ -12,6 +12,8 @@ import Leaderboard from "./pages/Leaderboard";
 import MockResult from "./components/MockResult"
 import LeaderboardQuiz from "./components/LeaderboardQuiz";
 import LandingPage from "./pages/LandingPage";
+import DeleteTest from "./pages/DeleteTest";
+import DeleteQuiz from "./pages/DeleteQuiz";
 
 
 
@@ -47,6 +49,8 @@ function App() {
 						<Route path="/result/html" element={<LeaderboardQuiz />} />
 						<Route path="/login" element={<LoginPage />} />
 						<Route path="/landingpage" element={<LandingPage />} />
+						<Route path="/deletetest" element={<DeleteTest />} />
+						<Route path="/deletequiz" element={<DeleteQuiz />} />
 					</Routes>
 				</ThemeProvider>
 			</Router>
