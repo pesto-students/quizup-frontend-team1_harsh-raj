@@ -22,11 +22,11 @@ export const LoginCard = () => {
 						<label>Admin</label>
 					</div>
 				</Flex>
-				<StyledButton fontclr="#343E3D" color="#fff" width="250px" login>
+				<StyledButton fontclr="#343E3D" color="#fff" wd="250px" login>
 					<img src="/images/google.svg" alt="google logo" />
 					Sign in with Google
 				</StyledButton>
-				<StyledButton fontclr="#343E3D" color="#fff" width="250px" login>
+				<StyledButton fontclr="#343E3D" color="#fff" wd="250px" login>
 					Try as Demo Student
 				</StyledButton>
 			</StyledLoginCard>
