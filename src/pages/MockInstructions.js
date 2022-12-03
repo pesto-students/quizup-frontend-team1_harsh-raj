@@ -75,6 +75,8 @@ function MockInstructions() {
 				</StyledButton>
 
 				<StyledButton>Start</StyledButton>
+
+				<StyledButton>Start</StyledButton>
 			</Container>
 		</>
 	);
