@@ -2,12 +2,14 @@ import { Link, useParams } from "react-router-dom";
 import { StyledButton } from "../components/styled/Button.styled";
 import { Flex } from "../components/styled/Flex.styled";
 import { Container, Titlebar } from "../components/styled/Instructions.styled";
-// import examData from "../examData";
+import examData from "../examData";
 
 function MockInstructions() {
 	const { id } = useParams();
 	console.log(id);
 
+	const testName = examData.filter((test) => test.id === id)[0];
+	console.log(testName);
 	return (
 		<>
 			<Titlebar>
@@ -45,7 +47,9 @@ function MockInstructions() {
 					<StyledButton color="#343E3D">Back</StyledButton>
 				</Link>
 
-				<StyledButton>Start</StyledButton>
+				<Link to={`/mocktest/${id}`}>
+					<StyledButton>Start</StyledButton>
+				</Link>
 			</Container>
 		</>
 	);
