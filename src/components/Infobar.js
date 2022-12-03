@@ -5,8 +5,11 @@ import {
 	SectionBody,
 	QuestionBox,
 } from "./styled/Infobar.styled";
+import { useSelector } from "react-redux";
 
 function Infobar() {
+	const { test } = useSelector((state) => state.tests);
+	const number = test.questions.length;
 	return (
 		<StyledInfobar>
 			<div className="timer">

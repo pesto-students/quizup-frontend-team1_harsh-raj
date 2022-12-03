@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { StyledButton } from "../components/styled/Button.styled";
 import { Flex } from "../components/styled/Flex.styled";
 import { Container, Titlebar } from "../components/styled/Instructions.styled";
@@ -73,10 +73,9 @@ function MockInstructions() {
 				<StyledButton color="#343E3D" onClick={backClickHandler}>
 					Back
 				</StyledButton>
-
-				<StyledButton>Start</StyledButton>
-
-				<StyledButton>Start</StyledButton>
+				<Link to={"/start"}>
+					<StyledButton>Start</StyledButton>
+				</Link>
 			</Container>
 		</>
 	);

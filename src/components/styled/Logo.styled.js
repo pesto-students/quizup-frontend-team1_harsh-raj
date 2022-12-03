@@ -9,7 +9,7 @@ export const LogoText = styled.p`
 	color: ${({ color }) => color || "#fff"};
 	font-size: 2rem;
 	margin-bottom: 50px;
-	font-weight: 300;
+	font-weight: 400;
 `;
 
 export const Logotext = styled.p`
