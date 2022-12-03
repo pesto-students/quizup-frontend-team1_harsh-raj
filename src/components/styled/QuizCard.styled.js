@@ -17,7 +17,6 @@ export const StyledQuizCard = styled.div`
 	position: relative;
 
 	& .price {
-		font-size: 1rem;
 		width: 40px;
 		height: 40px;
 		padding: 5px;
@@ -31,13 +30,14 @@ export const StyledQuizCard = styled.div`
 		box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 		& p {
 			position: relative;
-			top: 5px;
+			text-align: center;
+			top: 7px;
+			font-size: 14px;
 		}
 	}
 
 	& .time {
-		font-size: 0.9rem;
+		font-size: 0.8rem;
 		color: ${({ theme }) => theme.colors.orange};
-		align-self: flex-start;
 	}
 `;
