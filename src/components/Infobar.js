@@ -16,23 +16,9 @@ function Infobar() {
 				</div>
 			</div>
 
-			<SectionTitle>Quant</SectionTitle>
+			<SectionTitle>Questions</SectionTitle>
 			<SectionBody>
 				<Flex wrap>
-					<QuestionBox>1</QuestionBox>
-					<QuestionBox>2</QuestionBox>
-					<QuestionBox>3</QuestionBox>
-					<QuestionBox>4</QuestionBox>
-					<QuestionBox>5</QuestionBox>
-					<QuestionBox>6</QuestionBox>
-					<QuestionBox>7</QuestionBox>
-					<QuestionBox>8</QuestionBox>
-				</Flex>
-			</SectionBody>
-			<SectionTitle>Verbal</SectionTitle>
-			<SectionBody>
-				<Flex wrap>
-					<QuestionBox>1</QuestionBox>
 					<QuestionBox>2</QuestionBox>
 					<QuestionBox>3</QuestionBox>
 					<QuestionBox>4</QuestionBox>

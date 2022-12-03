@@ -2,9 +2,8 @@ import styled from "styled-components";
 
 export const StyledInfobar = styled.div`
 	width: 300px;
-	/* padding: 30px 50px; */
 	border-left: 2px solid ${({ theme }) => theme.colors.darkGreen};
-	height: 93.5vh;
+	height: 100%;
 
 	& .timer {
 		margin: 20px auto;
@@ -35,10 +34,11 @@ export const SectionBody = styled.div`
 export const QuestionBox = styled.div`
 	width: 30px;
 	height: 30px;
-	background-color: lightseagreen;
+	background-color: #d1d1d1;
 	border-radius: 10px;
 	margin-right: 8px;
 	margin-bottom: 10px;
 	text-align: center;
 	padding: 5px 0;
+	cursor: pointer;
 `;
