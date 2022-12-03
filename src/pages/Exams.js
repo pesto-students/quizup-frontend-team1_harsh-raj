@@ -9,7 +9,9 @@ import { useEffect } from "react";
 
 function Exams() {
 	const dispatch = useDispatch();
-	const { exams, isError, message } = useSelector((state) => state.exams);
+	const { exams, isError, isLoading, message } = useSelector(
+		(state) => state.exams
+	);
 
 	useEffect(() => {
 		if (isError) {
@@ -22,6 +24,7 @@ function Exams() {
 			dispatch(reset());
 		};
 	}, [dispatch, isError, message]);
+
 	return (
 		<>
 			<Flex>
@@ -32,9 +35,11 @@ function Exams() {
 						<Searchbar />
 					</Flex>
 					<Flex wrap>
-						{exams.map((exam) => (
-							<MockCard key={exam._id} item={exam} />
-						))}
+						{isLoading ? (
+							<h3>Loading...</h3>
+						) : (
+							exams.map((exam) => <MockCard key={exam._id} item={exam} />)
+						)}
 					</Flex>
 				</Container>
 			</Flex>

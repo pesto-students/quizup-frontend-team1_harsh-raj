@@ -3,6 +3,7 @@ import examService from "./examService";
 
 const initialState = {
 	exams: [],
+	tests: [],
 	isError: false,
 	isSuccess: false,
 	isLoading: false,
@@ -29,6 +30,21 @@ export const getAllExams = createAsyncThunk(
 	async (_, thunkAPI) => {
 		try {
 			return await examService.getAllExams();
+		} catch (err) {
+			const message =
+				(err.response && err.response.data && err.response.data.message) ||
+				err.message ||
+				err.toString();
+			return thunkAPI.rejectWithValue(message);
+		}
+	}
+);
+
+export const getAllTests = createAsyncThunk(
+	"exams/getAllTests",
+	async (examId, thunkAPI) => {
+		try {
+			return await examService.getAllTests(examId);
 		} catch (err) {
 			const message =
 				(err.response && err.response.data && err.response.data.message) ||
@@ -69,6 +85,19 @@ export const examSlice = createSlice({
 				state.exams = action.payload;
 			})
 			.addCase(getAllExams.rejected, (state, action) => {
+				state.isLoading = false;
+				state.isError = false;
+				state.message = action.payload;
+			})
+			.addCase(getAllTests.pending, (state) => {
+				state.isLoading = true;
+			})
+			.addCase(getAllTests.fulfilled, (state, action) => {
+				state.isLoading = false;
+				state.isSuccess = true;
+				state.tests = action.payload;
+			})
+			.addCase(getAllTests.rejected, (state, action) => {
 				state.isLoading = false;
 				state.isError = false;
 				state.message = action.payload;

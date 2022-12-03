@@ -14,9 +14,16 @@ const getAllExams = async () => {
 	return response.data;
 };
 
+// Get all tests in an exam
+const getAllTests = async (examId) => {
+	const response = await axios.get(API_URL + examId);
+	return response.data;
+};
+
 const examService = {
 	getAllExams,
 	getFiveExams,
+	getAllTests,
 };
 
 export default examService;

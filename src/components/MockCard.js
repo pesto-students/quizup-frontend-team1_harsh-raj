@@ -8,7 +8,7 @@ function MockCard({ item: { title, image, _id } }) {
 				{/* <img src={`./images/exam-icons/${image}`} alt={name} /> */}
 			</StyledIcon>
 			<p>{title}</p>
-			<Link to={`/tests/${_id}`}>
+			<Link to={`/exam/${_id}`}>
 				<Button>Explore tests</Button>
 			</Link>
 		</StyledMockCard>
