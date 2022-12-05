@@ -2,13 +2,15 @@ import styled from "styled-components";
 
 export const LogoContainer = styled.div`
     // display: flex;
-    width: 90%;
+    width: 80%;
     margin-left: 100px;
+    margin-top: 10px;
     padding: 10px 0 0 30px;
 
    span {
         font-size: 45px;
-        width="100px" 
+        margin-bottom: 20px;
+        // width="100px" 
     }
 
          @media (max-width: ${({ theme }) => theme.mobile}) {

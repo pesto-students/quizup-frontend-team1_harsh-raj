@@ -1,26 +1,26 @@
 import styled from "styled-components";
 
-export const Flex = styled.div`
+export const FlexContainer = styled.div`
     display: flex;
     // align-items: center;
     width: 100%;
-    padding-top: 40px;
+    // padding: 20px 40px 20px 0px;
 
-    // margin: 40px 40px 20px 30px ;
+    margin-top: 20px;
     margin-bottom: 20px;
     justify-content: space-between;
 
 
     div {
         padding-left: 70px;
-        // margin: 5px 40px 55px 50px;
+        margin: 5px 40px 55px 50px;
         margin-left: 50px;
         // margin-right: 50px;
         // text-align: center;
-        // width: 60%;
+        width: 50%;
 
         h1 {
-            width: 60%;
+            width: 50%;
         // text-align: left;
 
  
@@ -57,7 +57,7 @@ export const Flex = styled.div`
         h1 {
             font-size: 50px;
             width: 100%;
-            // padding: 10px;
+            padding-top: 10px 0 10px 0;
         }
 
         p {
@@ -72,6 +72,7 @@ export const Flex = styled.div`
         color: #FFD05A;
         font-size: 16px;
         // padding: 10px;
+        margin-top: 30px;
         margin-bottom: 15px;
         // width: 100%;
 
@@ -84,6 +85,7 @@ export const Flex = styled.div`
 
     ul {
         // width: 60
+        // margin-top: 5px;
         margin-right: 2px;
         text-align: left;
 

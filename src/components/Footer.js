@@ -1,7 +1,7 @@
 import { LogoContainer, SocialContainer } from "./LogoContainer"
 import SocialIcons from "./SocialIcons"
 // import { Container } from "./styles/Container.styled"
-import { Flex } from "./styles/Flex.styled"
+import { FlexContainer } from "./styles/FlexContainer.styled"
 import { StyledFooter } from "./styles/Footer.styled"
 import { Logo, LogoImg } from "./styles/Header.styled"
 import { BsFillTelephoneFill, BsFillEnvelopeFill } from "react-icons/bs";
@@ -13,11 +13,11 @@ export default function Footer() {
         <StyledFooter>
             {/* <Container> */}
             <LogoContainer>
-                <Logo href=""><LogoImg src='./images/QuizUp-logo.svg' /><span>QuizUp</span></Logo>
+                <Logo href=""><LogoImg src='./images/QuizUp-logo.svg' alert="Quiz" /><span>QuizUp</span></Logo>
 
                 <SocialContainer><SocialIcons /></SocialContainer>
             </LogoContainer>
-            <Flex>
+            <FlexContainer>
                 <ul>
                     <h3>Site Map</h3>
                     <li>About us</li>
@@ -38,13 +38,13 @@ export default function Footer() {
                     <li>Teams and Conditions</li>
                 </ul>
 
-            </Flex>
+            </FlexContainer>
             <SideContainer>
                 <ul>
                     <h3>Contact Us</h3>
                     <p>If you have any queries or feedback, please contact us an</p>
-                    <div><BsFillTelephoneFill /><p>+91999999999</p></div>
-                    <div><BsFillEnvelopeFill /><p>care@quizup.com</p></div>
+                    <div><BsFillTelephoneFill color="#FFD05A" /><p>+91999999999</p></div>
+                    <div><BsFillEnvelopeFill color="#FFD05A" /><p>care@quizup.com</p></div>
                 </ul>
             </SideContainer>
             {/* </Container> */}

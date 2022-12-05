@@ -1,7 +1,9 @@
-import { Styledheader, Nav, Logo, Rightcontainer, Menu, MenuLink, Image, LogoImg } from "./styles/Header.styled"
+import { Styledheader, Nav, Rightcontainer, Menu, MenuLink, Image, Logo } from "./styles/Header.styled"
 import { Button, GetButton } from "./styles/Button.styled"
 import { useState } from "react"
-import { Flex } from './styles/Flex.styled'
+import { FlexContainer } from './styles/FlexContainer.styled'
+import { Flex } from "./styled/Flex.styled";
+import { LogoImg, Logotext } from "./styled/Logo.styled";
 
 
 export default function Header() {
@@ -12,7 +14,14 @@ export default function Header() {
     <Styledheader>
       <Nav>
 
-        <Logo href=""><LogoImg src='./images/QuizUp-logo.svg' /><span>QuizUp</span></Logo>
+        {/* <Logo href=""><LogoImg src='./images/QuizUp-logo.svg' /><span>QuizUp</span></Logo> */}
+        <Logo>
+          <Flex logo>
+            <LogoImg src="./images/QuizUp-logo.svg" alt="Quizup logo" sizes="50px" />
+            <Logotext >QuizUp</Logotext>
+          </Flex>
+        </Logo>
+
         <Rightcontainer onClick={() => setIsOpen(!isOpen)}>
           <span></span>
           <span></span>
@@ -26,7 +35,7 @@ export default function Header() {
           <Button>Login</Button>
         </Menu>
       </Nav>
-      <Flex>
+      <FlexContainer>
         <div>
           <h3>100% SATISFACTION GURANTEE</h3>
 
@@ -41,7 +50,7 @@ export default function Header() {
         <span>
           <Image src='./images/Hero image.svg' alt='' />
         </span>
-      </Flex>
+      </FlexContainer>
     </Styledheader>
   )
 }

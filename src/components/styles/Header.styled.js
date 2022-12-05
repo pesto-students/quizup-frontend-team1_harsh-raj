@@ -2,9 +2,10 @@ import styled from "styled-components";
 
 export const Styledheader = styled.header`
     // background-color: #fff;
-    // padding: 50px;
+    margin-top: 30px;
+    // width: 100%;
     background-color: ${({ theme }) => theme.colors.header};
-    padding: 40px 0;
+    // padding: 40px 0;
 
     @media(max-width: ${({ theme }) => theme.mobile}) {
         flex-direction: column;
@@ -22,17 +23,18 @@ export const Nav = styled.div`
     margin-right: 60px;
 `
 export const Logo = styled.a`
-    padding: 1rem 0;
+    // padding: 1rem 0;
+    margin-top: 20px;
     color: #000;
     text-decoration: none;
-    font-weight: 800;
-    font-size: 1.7rem;
+    // font-weight: 800;
+    // font-size: 1.7rem;
 
     span {
-        font-weight: 300;
-        width: 100%;
+        // font-weight: 300;
+        // width: 100%;
         font-size: 3rem;
-        margin-left: 5px;
+        margin-left: 10px;
     }
          @media (max-width: ${({ theme }) => theme.mobile}) {
         // flex-direction: row;
@@ -43,7 +45,8 @@ export const Logo = styled.a`
 `
 
 export const LogoImg = styled.img`
-    width: 65px;
+    width: 54px;
+    margin-top: 5px;
 
     @media (max-width: 768px) {
         // display: flex;
@@ -98,12 +101,13 @@ export const MenuLink = styled.a`
     }
 `
 export const Image = styled.img`
-    width: 600px;
+    width: 540px;
     // padding: 40px;
     // margin-left: 70px;
     justify-content:
 
     @media(max-width: ${({ theme }) => theme.mobile}) {
-        margin: 40px 0 30px;
+        margin-right: 70px;
+        max-width: 100px;
     }
 `

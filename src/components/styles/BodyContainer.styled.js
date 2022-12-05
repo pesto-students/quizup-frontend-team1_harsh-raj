@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const BodyContainer = styled.div`
+    width: 100%;
+    margin-top: 80px;
+    // display: flex;
     
 
     div {
@@ -13,7 +16,7 @@ export const BodyContainer = styled.div`
     }
 
     // @media (max-width: ${({ theme }) => theme.mobile}) {
-    //     flex-direction: column;
+    //     // flex-direction: column;
     //     align-items: center;    
     // }
 `

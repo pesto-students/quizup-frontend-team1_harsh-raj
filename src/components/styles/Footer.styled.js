@@ -5,7 +5,8 @@ export const StyledFooter = styled.div`
     color: #fff;
     // padding: 100px 0 60px;
     display: flex;
-    justify-content: space-evenly;
+    width: 100%;
+    // justify-content: space-evenly;
 
     ul{
         list-style-type: none

@@ -5,6 +5,11 @@ export const Logo = styled.img`
 	margin-bottom: 50px;
 `;
 
+export const LogoImg = styled.img`
+	width: 55px !important;
+	margin-bottom: 50px;
+`;
+
 export const LogoText = styled.p`
 	color: ${({ color }) => color || "#fff"};
 	font-size: 2rem;
@@ -14,7 +19,8 @@ export const LogoText = styled.p`
 
 export const Logotext = styled.p`
 	// color: black;
-	font-size: 2rem;
+	font-size: 2.7rem;
+	margin-top: 7px;
 	margin-bottom: 50px;
 	font-weight: 300;
 `;
