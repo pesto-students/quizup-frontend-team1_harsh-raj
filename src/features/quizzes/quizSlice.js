@@ -41,6 +41,22 @@ export const getAllQuizzes = createAsyncThunk(
 	}
 );
 
+// Get single quiz
+export const getOneQuiz = createAsyncThunk(
+	"quizzes/getOne",
+	async (quizId, thunkAPI) => {
+		try {
+			return await quizService.getOneQuiz(quizId);
+		} catch (err) {
+			const message =
+				(err.response && err.response.data && err.response.data.message) ||
+				err.message ||
+				err.toString();
+			return thunkAPI.rejectWithValue(message);
+		}
+	}
+);
+
 export const quizSlice = createSlice({
 	name: "quiz",
 	initialState,
@@ -71,6 +87,19 @@ export const quizSlice = createSlice({
 				state.quizzes = action.payload;
 			})
 			.addCase(getAllQuizzes.rejected, (state, action) => {
+				state.isLoading = false;
+				state.isError = false;
+				state.message = action.payload;
+			})
+			.addCase(getOneQuiz.pending, (state) => {
+				state.isLoading = true;
+			})
+			.addCase(getOneQuiz.fulfilled, (state, action) => {
+				state.isLoading = false;
+				state.isSuccess = true;
+				state.quizzes = action.payload;
+			})
+			.addCase(getOneQuiz.rejected, (state, action) => {
 				state.isLoading = false;
 				state.isError = false;
 				state.message = action.payload;

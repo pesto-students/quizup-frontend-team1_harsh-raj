@@ -12,9 +12,15 @@ const getAllQuizzes = async () => {
 	return response.data;
 };
 
+const getOneQuiz = async (quizId) => {
+	const response = await axios.get(API_URL + quizId);
+	return response.data;
+};
+
 const quizService = {
 	getFiveQuizzes,
 	getAllQuizzes,
+	getOneQuiz,
 };
 
 export default quizService;
