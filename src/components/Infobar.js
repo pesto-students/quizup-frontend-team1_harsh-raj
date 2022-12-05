@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 
 function Infobar() {
 	const { test } = useSelector((state) => state.tests);
-	const number = test.questions.length;
+
 	return (
 		<StyledInfobar>
 			<div className="timer">
@@ -22,13 +22,11 @@ function Infobar() {
 			<SectionTitle>Questions</SectionTitle>
 			<SectionBody>
 				<Flex wrap>
-					<QuestionBox>2</QuestionBox>
-					<QuestionBox>3</QuestionBox>
-					<QuestionBox>4</QuestionBox>
-					<QuestionBox>5</QuestionBox>
-					<QuestionBox>6</QuestionBox>
-					<QuestionBox>7</QuestionBox>
-					<QuestionBox>8</QuestionBox>
+					{test.questions
+						? test.questions.map((question, index) => (
+								<QuestionBox key={question._id}>{index + 1}</QuestionBox>
+						  ))
+						: null}
 				</Flex>
 			</SectionBody>
 		</StyledInfobar>
