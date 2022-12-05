@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { StyledButton } from "../components/styled/Button.styled";
 import { Flex } from "../components/styled/Flex.styled";
 import { Container, Titlebar } from "../components/styled/Instructions.styled";
@@ -85,7 +85,9 @@ function QuizDetails() {
 					Back
 				</StyledButton>
 
-				<StyledButton>Play Now</StyledButton>
+				<Link to={"/play"}>
+					<StyledButton>Play Now</StyledButton>
+				</Link>
 			</Container>
 		</>
 	);
