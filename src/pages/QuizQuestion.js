@@ -8,8 +8,79 @@ import {
 } from "../components/styled/QuizQuestion.styled";
 import { Logo, LogoText } from "../components/styled/Logo.styled";
 import { Container, Timer } from "../components/styled/QuizQuestion.styled";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function QuizQuestion() {
+	const dispatch = useDispatch();
+	const navigate = useNavigate();
+	const { quizzes, isLoading, message, isError } = useSelector(
+		(state) => state.quizzes
+	);
+
+	const [currentQuestion, setCurrentQuestion] = useState(0);
+	const [score, setScore] = useState(0);
+	const [twoMultiplier, setTwoMultiplier] = useState(false);
+	const [fiveMultiplier, setFiveMultiplier] = useState(false);
+
+	const quiz = quizzes[0];
+	console.log(quiz);
+
+	const questions = quiz ? quiz.questionstf : [];
+
+	useEffect(() => {
+		if (isError) {
+			console.log(message);
+		}
+	}, [isError, message]);
+
+	const twoMultiplierHandler = () => {
+		if (twoMultiplier) {
+			setTwoMultiplier(false);
+			setFiveMultiplier(false);
+		} else {
+			setTwoMultiplier(true);
+			setFiveMultiplier(false);
+		}
+	};
+	const fiveMultiplierHandler = () => {
+		if (fiveMultiplier) {
+			setFiveMultiplier(false);
+			setTwoMultiplier(false);
+		} else {
+			setFiveMultiplier(true);
+			setTwoMultiplier(false);
+		}
+	};
+
+	const optionClickHandler = (option) => {
+		if (currentQuestion === questions.length - 1) {
+			navigate("/result");
+		} else {
+			if (option === questions[currentQuestion].answer) {
+				if (twoMultiplier) {
+					setScore(score + 20);
+				} else if (fiveMultiplier) {
+					setScore(score + 50);
+				} else {
+					setScore(score + 10);
+				}
+			} else {
+				if (twoMultiplier) {
+					setScore(score - 20);
+				} else if (fiveMultiplier) {
+					setScore(score - 50);
+				} else {
+					setScore(score - 10);
+				}
+			}
+			setTwoMultiplier(false);
+			setFiveMultiplier(false);
+			setCurrentQuestion(currentQuestion + 1);
+		}
+	};
+
 	return (
 		<Container>
 			<Flex searchbar>
@@ -24,36 +95,65 @@ function QuizQuestion() {
 					</Flex>
 				</div>
 				<div>
-					<StyledButton wd="100px" color="#343E3D">
+					<StyledButton
+						wd="100px"
+						color="#343E3D"
+						onClick={() => {
+							currentQuestion === questions.length - 1
+								? navigate("/result")
+								: setCurrentQuestion(currentQuestion + 1);
+						}}
+					>
 						Skip
 					</StyledButton>
 				</div>
 			</Flex>
 			<MultiplierButtons>
-				<button className="btn__2x">2X</button>
-				<button>5X</button>
+				<button
+					className={`btn__2x ${twoMultiplier ? "clicked" : ""}`}
+					onClick={twoMultiplierHandler}
+				>
+					2X
+				</button>
+				<button
+					className={fiveMultiplier ? "clicked" : ""}
+					onClick={fiveMultiplierHandler}
+				>
+					5X
+				</button>
 			</MultiplierButtons>
 			<QuestionBox>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eros
-					lacus, varius gravida ante eget, lobortis sodales purus. In hac
-					habitasse platea dictumst. Donec velit felis, sagittis quis libero at,
-					venenatis venenatis sem. Nullam quis lacus sem. Mauris quis tortor
-					accumsan, accumsan odio malesuada, cursus neque. Proin id libero nec
-					eros rutrum eleifend. Praesent dui magna, consectetur eu orci ac,
-					mollis imperdiet eros. Proin vel malesuada nibh. Morbi non quam
-					fermentum, pharetra est at, egestas tellus. Nunc fermentum eget ligula
-					non convallis. Mauris lacinia magna sit amet mi mollis, quis facilisis
-					lacus sodales. Fusce sollicitudin scelerisque sem, nec placerat leo.
-				</p>
+				{questions ? (
+					<p>{questions[currentQuestion].question}</p>
+				) : (
+					<p>Loading...</p>
+				)}
 			</QuestionBox>
 			<OptionsContainer>
-				<div>A. Option A</div>
-				<div className="green">B. Option B</div>
-				<div className="blue">C. Option C</div>
-				<div className="yellow">D. Option D</div>
+				{questions[currentQuestion].options.map((option, index) => (
+					<>
+						<div
+							key={option._id}
+							onClick={() => optionClickHandler(option)}
+							className={
+								index === 1
+									? "green"
+									: "" || index === 2
+									? "blue"
+									: "" || index === 3
+									? "yellow"
+									: ""
+							}
+						>
+							{option}
+						</div>
+					</>
+				))}
 			</OptionsContainer>
-			<QuestionCounter>5/20</QuestionCounter>
+			<QuestionCounter>
+				<div>{score}</div>
+				{currentQuestion + 1}/{questions.length}
+			</QuestionCounter>
 		</Container>
 	);
 }

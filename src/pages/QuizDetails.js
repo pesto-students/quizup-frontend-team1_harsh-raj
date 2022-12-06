@@ -14,6 +14,8 @@ function QuizDetails() {
 		(state) => state.quizzes
 	);
 
+	const quiz = quizzes[0];
+
 	useEffect(() => {
 		if (isError) {
 			console.log(message);
@@ -36,21 +38,21 @@ function QuizDetails() {
 			<Titlebar>
 				<Flex>
 					<img src="/images/logo-gradient.svg" alt="quizup logo" />
-					<p>{quizzes ? quizzes.title + " - Quiz" : ""}</p>
+					<p>{quiz ? quiz.title : ""}</p>
 				</Flex>
 			</Titlebar>
 
 			<Container>
 				<h1>Quiz Details</h1>
 
-				{quizzes ? (
+				{quiz ? (
 					<ol>
 						<li>
-							There will be {quizzes.questions ? quizzes.questions.length : ""}{" "}
+							There will be {quiz.questions ? quiz.questions.length : ""}{" "}
 							questions in this quiz.
 						</li>
 						<li>
-							Time limit for this quiz will be {quizzes.duration} minutes. The
+							Time limit for this quiz will be {quiz.duration} minutes. The
 							timer will start as soon as you see the question on you screen.
 						</li>
 						<li>
@@ -75,7 +77,7 @@ function QuizDetails() {
 							deducted if the answer is wrong. Same will be the case for 5x
 							button.
 						</li>
-						<li>{`This quiz has an entry fee of Rs. ${quizzes.price}`}</li>
+						<li>{`This quiz has an entry fee of Rs. ${quiz.price}`}</li>
 					</ol>
 				) : (
 					<h2>Loading...</h2>

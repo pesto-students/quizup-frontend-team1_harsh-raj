@@ -22,6 +22,7 @@ export const QuestionBox = styled.div`
 	text-align: center;
 	width: fit-content;
 	max-width: 800px;
+	min-width: 500px;
 	height: fit-content;
 	min-height: 200px;
 	margin: 0 auto;
@@ -38,6 +39,7 @@ export const MultiplierButtons = styled.div`
 	height: 200px;
 	padding: 40px 10px;
 	text-align: center;
+	box-sizing: border-box;
 
 	& button {
 		font-size: 1.5rem;
@@ -49,9 +51,15 @@ export const MultiplierButtons = styled.div`
 		cursor: pointer;
 		background-color: ${({ theme }) => theme.colors.lightGreen};
 		transition: 0.2ms ease-in-out;
+		box-sizing: border-box;
 
 		&:hover {
 			opacity: 0.9;
+		}
+
+		&.clicked {
+			box-shadow: 0px 0px 0px 1px black inset;
+			transform: scale(1.1);
 		}
 	}
 
@@ -81,6 +89,7 @@ export const OptionsContainer = styled.div`
 		cursor: pointer;
 		background-color: #db2d37;
 		transition: 0.2ms ease;
+		flex-grow: 1;
 
 		&:hover {
 			opacity: 0.95;
