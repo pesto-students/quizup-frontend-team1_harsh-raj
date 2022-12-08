@@ -1,9 +1,19 @@
 import { StyledSidebar, StyledButton } from "./styled/Sidebar.styled";
 import { Flex } from "./styled/Flex.styled";
 import { Logo, LogoText } from "./styled/Logo.styled";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logout, reset } from "../features/user/userSlice";
 
 function Sidebar() {
+	const navigate = useNavigate();
+	const dispatch = useDispatch();
+	const logoutHandler = () => {
+		dispatch(logout());
+		dispatch(reset());
+		navigate("/login");
+	};
+
 	return (
 		<>
 			<StyledSidebar>
@@ -13,14 +23,14 @@ function Sidebar() {
 							<Logo src="/images/logo-white.svg" alt="Quizup logo" />
 							<LogoText>QuizUp</LogoText>
 						</Flex>
-						<NavLink to={"/"}>
-							<StyledButton selected>
+						<NavLink to={"/dashboard"}>
+							<StyledButton>
 								<img src="/images/home_icon.svg" alt="Home icon" selected />
 								Home
 							</StyledButton>
 						</NavLink>
 						<NavLink to={"/exams"}>
-							<StyledButton className="active">
+							<StyledButton>
 								<img src="/images/mocktest_icon.svg" alt="Mock test icon" />
 								Mock Test
 							</StyledButton>
@@ -48,12 +58,10 @@ function Sidebar() {
 						</NavLink>
 					</div>
 					<div>
-						<Link to={"/logout"}>
-							<StyledButton bg="#FFD05A" color="#343e3d">
-								<img src="/images/logout_icon.svg" alt="Logout icon" />
-								Logout
-							</StyledButton>
-						</Link>
+						<StyledButton bg="#FFD05A" color="#343e3d" onClick={logoutHandler}>
+							<img src="/images/logout_icon.svg" alt="Logout icon" />
+							Logout
+						</StyledButton>
 					</div>
 				</Flex>
 			</StyledSidebar>

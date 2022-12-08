@@ -2,10 +2,29 @@ import Sidebar from "../components/Sidebar";
 import { Flex } from "../components/styled/Flex.styled";
 import { Container } from "../components/styled/Container.styled";
 import Searchbar from "../components/Searchbar";
-import examData from "../examData";
 import MockCard from "../components/MockCard";
+import { useDispatch, useSelector } from "react-redux";
+import { reset, getAllExams } from "../features/exams/examSlice";
+import { useEffect } from "react";
 
 function Exams() {
+	const dispatch = useDispatch();
+	const { exams, isError, isLoading, message } = useSelector(
+		(state) => state.exams
+	);
+
+	useEffect(() => {
+		if (isError) {
+			console.log(message);
+		}
+
+		dispatch(getAllExams());
+
+		return () => {
+			dispatch(reset());
+		};
+	}, [dispatch, isError, message]);
+
 	return (
 		<>
 			<Flex>
@@ -16,9 +35,11 @@ function Exams() {
 						<Searchbar />
 					</Flex>
 					<Flex wrap>
-						{examData.map((item, index) => (
-							<MockCard key={index} item={item} />
-						))}
+						{isLoading ? (
+							<h3>Loading...</h3>
+						) : (
+							exams.map((exam) => <MockCard key={exam._id} item={exam} />)
+						)}
 					</Flex>
 				</Container>
 			</Flex>

@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 export const Flex = styled.div`
 	display: flex;
-	flex-direction: ${(layout) => layout || "row"};
+	flex-direction: ${({ layout }) => layout || "row"};
 
 	${(props) =>
 		props.sidebar &&
@@ -47,6 +47,74 @@ export const Flex = styled.div`
 		`}
 
 		${(props) =>
+		props.question &&
+		css`
+			height: 93%;
+			justify-content: space-between;
+
+			& .wrapper {
+				/* flex-grow: 1; */
+				width: 80vw;
+				padding: 40px 50px;
+				/* background-color: lightblue; */
+			}
+
+			& .question {
+				margin-top: 10px;
+			}
+
+			& .answers {
+				margin-top: 30px;
+
+				& input {
+					margin-right: 10px;
+					margin-bottom: 20px;
+				}
+			}
+		`}
+
+		${(props) =>
+		props.buttons &&
+		css`
+			align-items: center;
+			justify-content: space-between;
+		`}
+
+	${(props) =>
+		props.btnAlign &&
+		css`
+			width: 90%;
+			justify-content: space-between;
+			margin-bottom: 50px;
+
+			& button {
+				margin-right: 20px;
+			}
+		`}
+
+	${(props) =>
+		props.barChart &&
+		css`
+			justify-content: space-between;
+			align-content: flex-start;
+			margin-top: 20px;
+		`}
+  
+    ${(props) =>
+		props.analytics &&
+		css`
+			justify-content: space-between;
+			align-content: flex-start;
+			margin: 40px 0;
+		`}
+
+		${(props) =>
+		props.mockquestion &&
+		css`
+			justify-content: center;
+		`}
+    
+		${(props) =>
 		props.radioBtn &&
 		css`
 			gap: 20px;
@@ -57,7 +125,6 @@ export const Flex = styled.div`
 			}
 		`}
 	
-
 		& .error {
 		margin-top: 100px;
 	}

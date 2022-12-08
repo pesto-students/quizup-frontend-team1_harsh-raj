@@ -1,11 +1,34 @@
 import MockCard from "./MockCard";
 import { Flex } from "./styled/Flex.styled";
 import { StyledSection } from "./styled/Section.styled";
-import examData from "../examData";
 import { StyledButton } from "./styled/Button.styled";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { reset, getFiveExams } from "../features/exams/examSlice";
+import { useEffect } from "react";
 
 function MockSection() {
+	const dispatch = useDispatch();
+	const { exams, isError, isLoading, message } = useSelector(
+		(state) => state.exams
+	);
+
+	useEffect(() => {
+		if (isError) {
+			console.log(message);
+		}
+
+		dispatch(getFiveExams());
+
+		return () => {
+			dispatch(reset());
+		};
+	}, [dispatch, isError, message]);
+
+	if (isLoading) {
+		return <h5>Loading...</h5>;
+	}
+
 	return (
 		<StyledSection>
 			<Flex seeMoreBtn>
@@ -15,8 +38,8 @@ function MockSection() {
 				</Link>
 			</Flex>
 			<Flex>
-				{examData.slice(0, 5).map((item, index) => (
-					<MockCard key={index} item={item} />
+				{exams.map((exam) => (
+					<MockCard key={exam._id} item={exam} />
 				))}
 			</Flex>
 		</StyledSection>

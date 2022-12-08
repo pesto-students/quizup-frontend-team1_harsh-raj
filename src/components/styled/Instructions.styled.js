@@ -5,7 +5,7 @@ export const Titlebar = styled.nav`
 	height: 50px;
 	background-color: ${({ theme }) => theme.colors.darkGreen};
 	color: ${({ theme }) => theme.colors.white};
-	padding: 10px 30px;
+	padding: 10px 40px;
 
 	& img {
 		width: 30px;
