@@ -1,6 +1,5 @@
 import { LogoContainer, SocialContainer } from "./LogoContainer";
 import SocialIcons from "./SocialIcons";
-// import { Container } from "./styles/Container.styled"
 import { FlexContainer } from "./styles/FlexContainer.styled";
 import { StyledFooter } from "./styles/Footer.styled";
 import { LogoDiv, LogoImg } from "./styles/Header.styled";
@@ -10,10 +9,9 @@ import { SideContainer } from "./styles/SideContainer.styled";
 export default function Footer() {
 	return (
 		<StyledFooter>
-			{/* <Container> */}
 			<LogoContainer>
-				<LogoDiv href="">
-					<LogoImg src="./images/QuizUp-logo.svg" alert="Quiz" />
+				<LogoDiv>
+					<LogoImg src="./images/logo-gradient.svg" alert="Quiz" />
 					<span>QuizUp</span>
 				</LogoDiv>
 
@@ -39,13 +37,13 @@ export default function Footer() {
 					<h3>Support</h3>
 					<li>FAQ's</li>
 					<li>Privacy Policy</li>
-					<li>Teams and Conditions</li>
+					<li>Terms and Conditions</li>
 				</ul>
 			</FlexContainer>
 			<SideContainer>
 				<ul>
 					<h3>Contact Us</h3>
-					<p>If you have any queries or feedback, please contact us an</p>
+					<p>If you have any queries or feedback, please contact us</p>
 					<div>
 						<BsFillTelephoneFill color="#FFD05A" />
 						<p>+91999999999</p>
@@ -56,7 +54,6 @@ export default function Footer() {
 					</div>
 				</ul>
 			</SideContainer>
-			{/* </Container> */}
 		</StyledFooter>
 	);
 }

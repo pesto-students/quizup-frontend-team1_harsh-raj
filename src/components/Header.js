@@ -19,14 +19,9 @@ export default function Header() {
 	return (
 		<Styledheader>
 			<Nav>
-				{/* <Logo href=""><LogoImg src='./images/QuizUp-logo.svg' /><span>QuizUp</span></Logo> */}
 				<Logo>
 					<Flex logo>
-						<LogoImg
-							src="./images/logo-gradient.svg"
-							alt="Quizup logo"
-							sizes="50px"
-						/>
+						<LogoImg src="./images/logo-gradient.svg" alt="Quizup logo" />
 						<Logotext>QuizUp</Logotext>
 					</Flex>
 				</Logo>
@@ -44,9 +39,9 @@ export default function Header() {
 					<Button>Login</Button>
 				</Menu>
 			</Nav>
-			<FlexContainer>
+			<FlexContainer bcg>
 				<div>
-					<h3>100% SATISFACTION GURANTEE</h3>
+					<h3>100% SATISFACTION GUARANTEE</h3>
 
 					<h1>Test your skills digitally from the comfort of your home.</h1>
 					<p>
