@@ -18,6 +18,12 @@ export const Flex = styled.div`
 		css`
 			gap: 10px;
 			align-items: center;
+
+			@media (max-width: ${({ theme }) => theme.mobile}) {
+				flex-direction: wrap;
+				justify-content: right;
+				width: 100%;
+			}
 		`}
 
 		${(props) =>

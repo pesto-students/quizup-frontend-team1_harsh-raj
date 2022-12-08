@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
 import GlobalStyles from "./components/styled/Global";
 import { ThemeProvider } from "styled-components";
+
 import Dashboard from "./pages/Dashboard";
 import Create from "./pages/CreatePage";
 import Delete from "./pages/DeletePage";
@@ -23,6 +23,8 @@ import LoginPage from "./pages/LoginPage";
 import Leaderboard from "./pages/Leaderboard";
 import MockResult from "./components/MockResult";
 import LeaderboardQuiz from "./components/LeaderboardQuiz";
+import LandingPage from "./pages/LandingPage";
+import DeleteTest from "./pages/DeleteTest";
 import QuizQuestion from "./pages/QuizQuestion";
 
 const theme = {
@@ -67,6 +69,12 @@ function App() {
 					<Route path="/result" element={<MockResult />} />
 					<Route path="/result/html" element={<LeaderboardQuiz />} />
 					<Route path="/login" element={<LoginPage />} />
+					<Route path="/tests/:id" element={<MockTests />} />
+					<Route path="/leaderboard" element={<Leaderboard />} />
+					<Route path="/login" element={<LoginPage />} />
+					<Route path="/" element={<LandingPage />} />
+					<Route path="/deletetest" element={<DeleteTest />} />
+					<Route path="/deletequiz" element={<DeleteQuiz />} />
 				</Routes>
 			</ThemeProvider>
 		</Router>
