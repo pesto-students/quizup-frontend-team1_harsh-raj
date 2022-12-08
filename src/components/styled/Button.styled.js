@@ -11,6 +11,7 @@ export const StyledButton = styled.button`
 	font-size: 1rem;
 	cursor: pointer;
 	transition: 0.2s ease;
+	text-decoration: none;
 
 	${(props) =>
 		props.login &&

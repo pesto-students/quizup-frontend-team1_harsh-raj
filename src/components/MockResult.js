@@ -5,7 +5,8 @@ import { Flex } from "./styled/Flex.styled";
 import { Logo, Logotext } from "./styled/Logo.styled";
 import { StyledMockResult, Photo } from "./styled/MockResult.styled";
 
-export default function MockResult() {
+export default function MockResult(props) {
+	console.log(props);
 	return (
 		<div style={{ margin: "40px" }}>
 			<Flex logo>

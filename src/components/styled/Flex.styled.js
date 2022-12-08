@@ -86,7 +86,7 @@ export const Flex = styled.div`
 			}
 		`}
 
-	& .error {
+	${(props) =>
 		props.barChart &&
 		css`
 			justify-content: space-between;
@@ -108,7 +108,8 @@ export const Flex = styled.div`
 			justify-content: center;
 		`}
     
-		${(props) => props.radioBtn &&
+		${(props) =>
+		props.radioBtn &&
 		css`
 			gap: 20px;
 			justify-content: center;

@@ -1,11 +1,28 @@
 import Sidebar from "../components/Sidebar";
+import { useEffect } from "react";
 import { Flex } from "../components/styled/Flex.styled";
 import { Container } from "../components/styled/Container.styled";
 import Searchbar from "../components/Searchbar";
-import quizData from "../quizData";
 import QuizCard from "../components/QuizCard";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllQuizzes, reset } from "../features/quizzes/quizSlice";
 
 function Quiz() {
+	const dispatch = useDispatch();
+	const { quizzes, isError, message } = useSelector((state) => state.quizzes);
+
+	useEffect(() => {
+		if (isError) {
+			console.log(message);
+		}
+
+		dispatch(getAllQuizzes());
+
+		return () => {
+			dispatch(reset());
+		};
+	}, [dispatch, isError, message]);
+
 	return (
 		<>
 			<Flex>
@@ -15,10 +32,12 @@ function Quiz() {
 						<h1>Explore all Quizzes</h1>
 						<Searchbar />
 					</Flex>
-					<Flex wrap>
-						{quizData.map((item, index) => (
-							<QuizCard key={index} item={item} />
-						))}
+					<Flex wrap="true">
+						{quizzes.length > 0 ? (
+							quizzes.map((quiz) => <QuizCard key={quiz._id} item={quiz} />)
+						) : (
+							<h4>Cant't find any quizzes. Sorry for inconvenience...</h4>
+						)}
 					</Flex>
 				</Container>
 			</Flex>
