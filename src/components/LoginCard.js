@@ -12,7 +12,8 @@ export const LoginCard = () => {
 	const { isSuccess, user } = useSelector((state) => state.auth);
 
 	function handleCallbackResponse(response) {
-		dispatch(login(response.credential)).then(navigate("/dashboard"));
+		dispatch(login(response.credential));
+		navigate("/dashboard");
 	}
 
 	useEffect(() => {
@@ -31,13 +32,11 @@ export const LoginCard = () => {
 			size: "large",
 		});
 
-		google.accounts.id.prompt();
-
 		return () => {
 			dispatch(reset());
 		};
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [dispatch]);
+	}, [dispatch, user, isSuccess]);
 	return (
 		<>
 			<StyledLoginCard>
