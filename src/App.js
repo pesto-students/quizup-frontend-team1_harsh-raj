@@ -14,7 +14,6 @@ import LeaderboardQuiz from "./components/LeaderboardQuiz";
 import LandingPage from "./pages/LandingPage";
 import DeleteTest from "./pages/DeleteTest";
 import DeleteQuiz from "./pages/DeleteQuiz";
-import Search from "./pages/Search";
 
 
 
@@ -52,7 +51,6 @@ function App() {
 						<Route path="/landingpage" element={<LandingPage />} />
 						<Route path="/deletetest" element={<DeleteTest />} />
 						<Route path="/deletequiz" element={<DeleteQuiz />} />
-						<Route path="/search" element={<Search />} />
 					</Routes>
 				</ThemeProvider>
 			</Router>

@@ -9,7 +9,6 @@ import { LogoImg, Logotext } from "./styled/Logo.styled";
 export default function Header() {
 
   const [isOpen, setIsOpen] = useState(false);
-  // const [isHide, setIsHide] = useState(false);
 
   return (
     <Styledheader>

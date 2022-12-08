@@ -43,7 +43,7 @@ export const SideContainer = styled.div`
 
          @media (max-width: ${({ theme }) => theme.mobile}) {
         // text-align: center;
-		margin-left: 50px; 
+		margin-left: 70px; 
       }
 
         
@@ -62,8 +62,9 @@ export const SideContainer = styled.div`
             width: 52%;
             margin-left: 30px;
 
-             @media (max-width: ${({ theme }) => theme.mobile}) {
-        width: 75%;
+            @media (max-width: ${({ theme }) => theme.mobile}) {
+        width: 70%;
+        margin-left: 30px;
       }
         }
     }
@@ -76,7 +77,6 @@ export const SideContainer = styled.div`
     @media (max-width: ${({ theme }) => theme.mobile}) {
         flex-direction: column;
         text-align: center;
-        margin-left: 50px;
-        margin-top: 20px
+        margin-left: 40px;
       }
 `
