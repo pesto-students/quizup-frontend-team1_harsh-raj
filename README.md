@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3a60744f-678f-4f08-a360-7d2e2dcb6560/deploy-status)](https://app.netlify.com/sites/pesto-n8-dbacs/deploys)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# QuizUp
 
-## Available Scripts
+![QuizUp Logo](./src/images/logo-gradient.svg)
 
-In the project directory, you can run:
+Preparation for any exam is incomplete without mock tests and quizzes.
+<br/>
+That is why we will create a gamified platform for people who are preparing for various government exams/ IT exams.
+<br/>
+It will enable them to give mock tests and skill based quizzes in a fun and interactive way while gaining tips for areas of improvement.
+<br/>
+They will feel like playing a game while testing their skills.
 
-### `npm start`
+<br/>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Table of Contents
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. [Demo](#demo)
+2. [Installation](#installation)
+3. [Technology Stack](#technology-stack)
+4. [Authors](#authors)
+5. [License](#license)
 
-### `npm test`
+<br/>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Demo
 
-### `npm run build`
+[Live Demo](http://localhost:3000)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<br/>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Please Note:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. We recommend using this app in Google Chrome.
+2. Use the app on Laptop/desktop only as of now.
+3. User has an Google Account to Login.
+4. User has Basic understanding of English Language.
 
-### `npm run eject`
+<br/>
+Test Credentials:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Try as Demo User button: Click on Demo user button
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<br/>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Installation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Fork or directly clone this repository to your local machine
+- Use the `npm install` command to install dependencies
+- Once the dependencies are finished installing, use the `npm start` command inside the root directory to open the app in your local browser of choice
 
-## Learn More
+<br/>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Technology Stack
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+We tried to use a completely modern tech stack while testing out some new technologies that we had never used before. This resulted in a fast, performant, and easily-extensible web app that should be fairly future-proof for the coming next several years. We used:
 
-### Code Splitting
+- [Redux toolkit](https://redux-toolkit.js.org/)
+- [Lodash](https://lodash.com/)
+- [Axios](https://axios-http.com/docs/intro)
+- [React Query](https://react-query.tanstack.com/)
+- [Node.js](https://nodejs.org/en/)
+- [Express](https://expressjs.com/)
+- [MongoDB](https://www.mongodb.com/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<br/>
 
-### Analyzing the Bundle Size
+# Authors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- [Chetan Arora](https://github.com/chaytan5)
+- [Yash-Ikhankar](https://github.com/Yash-Ikhankar)
+- [Pankaj Mahato](https://github.com/Svmpankaj)
 
-### Making a Progressive Web App
+<br/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# License
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[MIT](https://opensource.org/licenses/MIT)
