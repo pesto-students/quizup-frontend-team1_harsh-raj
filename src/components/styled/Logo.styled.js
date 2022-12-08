@@ -9,11 +9,12 @@ export const LogoImg = styled.img`
 	width: 55px !important;
 	margin-bottom: 50px;
 
-		@media (max-width: ${({ theme }) => theme.mobile}) {
-        // flex-direction: column;
-        // justify-content: center;
+	@media (max-width: ${({ theme }) => theme.mobile}) {
+		// flex-direction: column;
+		// justify-content: center;
 		// margin: 10px;
 		width: 100%;
+	}
 `;
 
 export const LogoText = styled.p`

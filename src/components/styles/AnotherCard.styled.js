@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledAnotherCard = styled.div`
-    // display: flex;
+	// display: flex;
 	width: 250px;
 	height: 250px;
 	border-radius: 10px;
@@ -13,7 +13,7 @@ export const StyledAnotherCard = styled.div`
 	// border: 2px solid black;
 	// padding: 2px;
 
-	h1 {
+	h2 {
 		padding: 10px;
 	}
 
