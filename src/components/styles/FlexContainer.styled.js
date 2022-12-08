@@ -4,6 +4,9 @@ export const FlexContainer = styled.div`
 	display: flex;
 	// align-items: center;
 	width: 100%;
+	/* background-image: url("/images/bcg-blur.png");
+	background-repeat: no-repeat;
+	/* background-size: contain;  */
 	// margin-right: 40px;
 	// padding: 20px 40px 20px 0px;
 
