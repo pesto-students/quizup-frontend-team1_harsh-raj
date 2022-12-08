@@ -25,10 +25,6 @@ function QuizSection() {
 		};
 	}, [dispatch, isError, message]);
 
-	if (isLoading) {
-		return <h5>Loading...</h5>;
-	}
-
 	return (
 		<StyledSection>
 			<Flex seeMoreBtn>
@@ -38,7 +34,9 @@ function QuizSection() {
 				</Link>
 			</Flex>
 			<Flex>
-				{quizzes.length > 0 ? (
+				{isLoading ? (
+					<h5>Loading...</h5>
+				) : quizzes.length > 0 ? (
 					quizzes.map((quiz) => <QuizCard key={quiz._id} item={quiz} />)
 				) : (
 					<h4>Cant't find any quizzes. Sorry for inconvenience...</h4>

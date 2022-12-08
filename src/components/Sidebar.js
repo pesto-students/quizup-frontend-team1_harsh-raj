@@ -1,9 +1,9 @@
 import { StyledSidebar, StyledButton } from "./styled/Sidebar.styled";
 import { Flex } from "./styled/Flex.styled";
 import { Logo, LogoText } from "./styled/Logo.styled";
-import { NavLink, Link, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { logout, reset } from "../features/user/userSlice";
+import { logout, reset } from "../features/auth/authSlice";
 
 function Sidebar() {
 	const navigate = useNavigate();
@@ -11,7 +11,7 @@ function Sidebar() {
 	const logoutHandler = () => {
 		dispatch(logout());
 		dispatch(reset());
-		navigate("/login");
+		navigate("/");
 	};
 
 	return (

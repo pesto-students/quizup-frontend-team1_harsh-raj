@@ -12,6 +12,7 @@ import { useState } from "react";
 import { FlexContainer } from "./styles/FlexContainer.styled";
 import { Flex } from "./styled/Flex.styled";
 import { LogoImg, Logotext } from "./styled/Logo.styled";
+import { Link } from "react-router-dom";
 
 export default function Header() {
 	const [isOpen, setIsOpen] = useState(false);
@@ -36,7 +37,9 @@ export default function Header() {
 					<MenuLink href="">Features</MenuLink>
 					<MenuLink href="">Pricing</MenuLink>
 					<MenuLink href="">Contact Us</MenuLink>
-					<Button>Login</Button>
+					<Link to={"/login"}>
+						<Button>Login</Button>
+					</Link>
 				</Menu>
 			</Nav>
 			<FlexContainer bcg>
@@ -48,8 +51,9 @@ export default function Header() {
 						Quality Mock tests and competitive Quizzes, now accessible at the
 						click of a button.
 					</p>
-
-					<GetButton>Get Started For Free</GetButton>
+					<Link to={"/login"}>
+						<GetButton>Get Started For Free</GetButton>
+					</Link>
 				</div>
 
 				<span>
