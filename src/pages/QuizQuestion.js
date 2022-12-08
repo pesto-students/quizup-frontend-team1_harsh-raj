@@ -27,7 +27,7 @@ function QuizQuestion() {
 	const quiz = quizzes[0];
 	console.log(quiz);
 
-	const questions = quiz ? quiz.questionstf : [];
+	const questions = quiz ? quiz.questionsmcq : [];
 
 	useEffect(() => {
 		if (isError) {

@@ -55,7 +55,7 @@ function App() {
 					<Route path="/delete" element={<Delete />} />
 					<Route path="/delete/mock" element={<DeleteMock />} />
 					<Route path="/delete/quiz" element={<DeleteQuiz />} />
-					<Route path="/" element={<Dashboard />} />
+					<Route path="/dashboard" element={<Dashboard />} />
 					<Route path="/exams" element={<Exams />} />
 					<Route path="/quiz" element={<Quiz />} />
 					<Route path="/exam/:id" element={<MockTests />} />
