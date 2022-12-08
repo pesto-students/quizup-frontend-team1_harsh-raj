@@ -2,7 +2,7 @@
 
 # QuizUp
 
-![QuizUp Logo](./public/images/logo-gradient.svg)
+![QuizUp Logo](./public/images/logo.png)
 
 Preparation for any exam is incomplete without mock tests and quizzes.
 <br/>
