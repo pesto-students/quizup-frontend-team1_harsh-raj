@@ -10,7 +10,6 @@ const getUser = async () => {
 	if (response.data) {
 		localStorage.setItem("user", JSON.stringify(response.data));
 	}
-	console.log("added to localstorage");
 	return response.data;
 };
 
@@ -18,7 +17,6 @@ const getUser = async () => {
 const logout = async () => {
 	localStorage.removeItem("user");
 	await axios.get(API_URL + "logout");
-	console.log("removed from localstorage");
 };
 
 const userService = {

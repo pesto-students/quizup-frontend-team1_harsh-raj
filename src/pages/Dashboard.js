@@ -12,8 +12,6 @@ function Dashboard() {
 	const dispatch = useDispatch();
 	const { user, isError, message } = useSelector((state) => state.user);
 
-	console.log(user);
-
 	if (user === null) {
 		dispatch(getUser());
 	}
