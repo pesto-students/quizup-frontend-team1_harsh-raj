@@ -1,11 +1,8 @@
 import styled from "styled-components";
 
 export const Styledheader = styled.header`
-	// background-color: #fff;
 	margin-top: 30px;
-	// width: 100%;
 	background-color: ${({ theme }) => theme.colors.header};
-	// padding: 40px 0;
 
 	@media (max-width: ${({ theme }) => theme.mobile}) {
 		flex-direction: column;
@@ -23,72 +20,57 @@ export const Nav = styled.div`
 	background: white;
 	margin-left: 70px;
 	margin-right: 60px;
+	margin-bottom: 20px;
 
 	@media (max-width: ${({ theme }) => theme.mobile}) {
-		// flex-direction: cloumn-reverse;
-		// justify-content: left;
-		// margin: 10px;
 		width: 80%;
 	}
 `;
 export const Logo = styled.a`
-	// padding: 1rem 0;
-	margin-top: 20px;
 	color: #000;
 	text-decoration: none;
-	// font-weight: 800;
-	// font-size: 1.7rem;
 
 	span {
-		// font-weight: 300;
-		// width: 100%;
 		font-size: 3rem;
 		margin-left: 10px;
 	}
 	@media (max-width: ${({ theme }) => theme.mobile}) {
 		flex-direction: wrap;
 		width: 40%;
-		// justify-content: center;
 		margin-left: 30px;
 	}
 `;
 
 export const LogoDiv = styled.a`
-	// padding: 1rem 0;
+	display: flex;
+	align-items: center;
 	margin-top: 20px;
 	color: #000;
 	text-decoration: none;
-	// font-weight: 800;
-	// font-size: 1.7rem;
+	gap: 10px;
 
 	span {
-		// font-weight: 300;
-		// width: 100%;
-		font-size: 3rem;
-		margin-left: 10px;
+		font-size: 2rem;
+		display: inline-block;
 
 		@media (max-width: ${({ theme }) => theme.mobile}) {
 			flex-direction: column;
 			width: 100%;
-			// justify-content: center;
-			margin-right: 20px;
 			padding: 0px;
 		}
 	}
 	@media (max-width: ${({ theme }) => theme.mobile}) {
 		flex-direction: column;
-		width: 50%;
-		// justify-content: center;
+		width: 100%;
 		margin: 0px;
+		margin-top: 30px;
 	}
 `;
 
 export const LogoImg = styled.img`
 	width: 54px;
-	margin-top: 5px;
 
 	@media (max-width: 768px) {
-		// display: flex;
 		flex-direction: column;
 	}
 `;
@@ -99,7 +81,7 @@ export const Rightcontainer = styled.div`
 	cursor: pointer;
 
 	span {
-		height: 2px;
+		height: 3px;
 		width: 25px;
 		background: #7b7fda;
 		margin-bottom: 4px;
@@ -108,9 +90,7 @@ export const Rightcontainer = styled.div`
 
 	@media (max-width: 768px) {
 		display: flex;
-		justify-content: right;
-		margin-left: 20px;
-		width: 60%;
+		justify-content: space-between;
 	}
 `;
 
@@ -123,7 +103,6 @@ export const Menu = styled.div`
 	@media (max-width: 768px) {
 		overflow: hidden;
 		flex-direction: column;
-		width: 100%;
 		max-height: ${({ isOpen }) => (isOpen ? "300px" : "0")};
 		transition: max-height 0.3s ease-in;
 	}
@@ -144,13 +123,11 @@ export const MenuLink = styled.a`
 `;
 export const Image = styled.img`
 	width: 550px;
-	padding: 20px;
-	margin-right: 40px;
-	// justify-content:
+	/* padding: 20px; */
+	margin: 40px;
 
 	@media (max-width: ${({ theme }) => theme.mobile}) {
-		// margin: 40px;
-		width: 350px;
-		justify-content: center;
+		width: 80vw;
+		margin: 20px;
 	}
 `;

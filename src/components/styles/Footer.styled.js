@@ -1,29 +1,26 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 export const StyledFooter = styled.div`
-    background-color: #343E3D;
-    color: #fff;
-    // padding: 100px 0 60px;
-    display: flex;
-    width: 100%;
-    // justify-content: space-evenly;
+	background-color: #343e3d;
+	color: #fff;
+	display: flex;
+	width: 100%;
 
-    ul{
-        list-style-type: none
-    }
+	ul {
+		list-style-type: none;
+	}
 
-    ul li {
-        margin-bottom: 20px;
-    }
+	ul li {
+		margin-bottom: 20px;
+	}
 
-    p {
-        text-align: right;
-    }
+	p {
+		text-align: right;
+	}
 
-    @media (max-width: ${({ theme }) => theme.mobile}) {
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-		// margin-bottom: 40px; 
-      }
-`
+	@media (max-width: ${({ theme }) => theme.mobile}) {
+		flex-direction: column;
+		width: 100%;
+		text-align: center;
+	}
+`;
