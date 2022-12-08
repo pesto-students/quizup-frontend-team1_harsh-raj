@@ -1,17 +1,19 @@
 import { StyledSidebar, StyledButton } from "./styled/Sidebar.styled";
 import { Flex } from "./styled/Flex.styled";
 import { Logo, LogoText } from "./styled/Logo.styled";
-import { NavLink, Link, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { logout, reset } from "../features/user/userSlice";
+import { logout, reset } from "../features/auth/authSlice";
 
 function Sidebar() {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 	const logoutHandler = () => {
+		/* global google */
+		google.accounts.id.disableAutoSelect();
 		dispatch(logout());
 		dispatch(reset());
-		navigate("/login");
+		navigate("/");
 	};
 
 	return (
@@ -58,7 +60,12 @@ function Sidebar() {
 						</NavLink>
 					</div>
 					<div>
-						<StyledButton bg="#FFD05A" color="#343e3d" onClick={logoutHandler}>
+						<StyledButton
+							className="g_id_signout"
+							bg="#FFD05A"
+							color="#343e3d"
+							onClick={logoutHandler}
+						>
 							<img src="/images/logout_icon.svg" alt="Logout icon" />
 							Logout
 						</StyledButton>

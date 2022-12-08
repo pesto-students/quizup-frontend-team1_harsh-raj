@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import GlobalStyles from "./components/styled/Global";
 import { ThemeProvider } from "styled-components";
+import PrivateRoutes from "./utils/PrivateRoutes";
 
 import Dashboard from "./pages/Dashboard";
 import Create from "./pages/CreatePage";
@@ -47,6 +48,26 @@ function App() {
 			<ThemeProvider theme={theme}>
 				<GlobalStyles />
 				<Routes>
+					{/* Private Routes */}
+					<Route element=<PrivateRoutes />>
+						<Route path="/dashboard" element={<Dashboard />} />
+						<Route path="/exams" element={<Exams />} />
+						<Route path="/quiz" element={<Quiz />} />
+						<Route path="/exam/:id" element={<MockTests />} />
+						<Route path="/instructions/:id" element={<MockInstructions />} />
+						<Route path="/quizdetails/:id" element={<QuizDetails />} />
+						<Route path="/leaderboard" element={<Leaderboard />} />
+						<Route path="/start" element={<MockQuestion />} />
+						<Route path="/play" element={<QuizQuestion />} />
+						<Route path="/result" element={<MockResult />} />
+						<Route path="/result/html" element={<LeaderboardQuiz />} />
+						<Route path="/leaderboard" element={<Leaderboard />} />
+					</Route>
+
+					{/* Public Routes  */}
+					<Route path="/" element={<LandingPage />} />
+					<Route path="/login" element={<LoginPage />} />
+
 					<Route path="/admin" element={<AdminDashboard />} />
 					<Route path="/create" element={<Create />} />
 					<Route path="/create/mock" element={<CreateMockTest />} />
@@ -57,22 +78,7 @@ function App() {
 					<Route path="/delete" element={<Delete />} />
 					<Route path="/delete/mock" element={<DeleteMock />} />
 					<Route path="/delete/quiz" element={<DeleteQuiz />} />
-					<Route path="/dashboard" element={<Dashboard />} />
-					<Route path="/exams" element={<Exams />} />
-					<Route path="/quiz" element={<Quiz />} />
-					<Route path="/exam/:id" element={<MockTests />} />
-					<Route path="/instructions/:id" element={<MockInstructions />} />
-					<Route path="/quizdetails/:id" element={<QuizDetails />} />
-					<Route path="/leaderboard" element={<Leaderboard />} />
-					<Route path="/start" element={<MockQuestion />} />
-					<Route path="/play" element={<QuizQuestion />} />
-					<Route path="/result" element={<MockResult />} />
-					<Route path="/result/html" element={<LeaderboardQuiz />} />
-					<Route path="/login" element={<LoginPage />} />
-					<Route path="/tests/:id" element={<MockTests />} />
-					<Route path="/leaderboard" element={<Leaderboard />} />
-					<Route path="/login" element={<LoginPage />} />
-					<Route path="/" element={<LandingPage />} />
+
 					<Route path="/deletetest" element={<DeleteTest />} />
 					<Route path="/deletequiz" element={<DeleteQuiz />} />
 				</Routes>

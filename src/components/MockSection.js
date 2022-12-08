@@ -25,10 +25,6 @@ function MockSection() {
 		};
 	}, [dispatch, isError, message]);
 
-	if (isLoading) {
-		return <h5>Loading...</h5>;
-	}
-
 	return (
 		<StyledSection>
 			<Flex seeMoreBtn>
@@ -38,9 +34,11 @@ function MockSection() {
 				</Link>
 			</Flex>
 			<Flex>
-				{exams.map((exam) => (
-					<MockCard key={exam._id} item={exam} />
-				))}
+				{isLoading ? (
+					<h5>Loading...</h5>
+				) : (
+					exams.map((exam) => <MockCard key={exam._id} item={exam} />)
+				)}
 			</Flex>
 		</StyledSection>
 	);
