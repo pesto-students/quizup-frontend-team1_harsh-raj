@@ -9,6 +9,8 @@ function Sidebar() {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 	const logoutHandler = () => {
+		/* global google */
+		google.accounts.id.disableAutoSelect();
 		dispatch(logout());
 		dispatch(reset());
 		navigate("/");
@@ -58,7 +60,12 @@ function Sidebar() {
 						</NavLink>
 					</div>
 					<div>
-						<StyledButton bg="#FFD05A" color="#343e3d" onClick={logoutHandler}>
+						<StyledButton
+							className="g_id_signout"
+							bg="#FFD05A"
+							color="#343e3d"
+							onClick={logoutHandler}
+						>
 							<img src="/images/logout_icon.svg" alt="Logout icon" />
 							Logout
 						</StyledButton>

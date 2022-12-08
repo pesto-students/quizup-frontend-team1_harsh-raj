@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { StyledButton } from "./styled/Button.styled";
 import { StyledLoginCard } from "./styled/LoginCard.styled";
 import { login, reset } from "../features/auth/authSlice";
@@ -9,12 +9,17 @@ export const LoginCard = () => {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
+	const { isSuccess, user } = useSelector((state) => state.auth);
+
 	function handleCallbackResponse(response) {
-		dispatch(login(response.credential));
-		navigate("/dashboard");
+		dispatch(login(response.credential)).then(navigate("/dashboard"));
 	}
 
 	useEffect(() => {
+		if (isSuccess || user) {
+			navigate("/dashboard");
+		}
+
 		/*global google */
 		google.accounts.id.initialize({
 			client_id:
