@@ -18,6 +18,13 @@ export const Flex = styled.div`
 		css`
 			gap: 10px;
 			align-items: center;
+
+			@media (max-width: ${({ theme }) => theme.mobile}) {
+        flex-direction: wrap;
+        justify-content: right;
+		// margin: 10px;
+		width: 100%;
+      }
 		`}
 
 		${(props) =>
@@ -55,4 +62,10 @@ export const Flex = styled.div`
 		& .error {
 		margin-top: 100px;
 	}
+
+		// @media (max-width: ${({ theme }) => theme.mobile}) {
+        // // flex-direction: column;
+        // // justify-content: center;
+		// // margin: 10px;
+		// width: 100%;
 `;
