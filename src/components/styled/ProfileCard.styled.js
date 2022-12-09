@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const StyledProfileCard = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   margin-top: 100px;
   height: 400px;
@@ -15,6 +16,7 @@ export const NameImage = styled.div`
   img {
     width: 40px;
     margin-top: 5px;
+    align-items: center;
   }
 `;
 

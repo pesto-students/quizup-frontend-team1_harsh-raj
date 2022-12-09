@@ -23,7 +23,7 @@ td{
 }
 
 th{
-  font-size:20px;
+  font-size:px;
 }
 
 `;
