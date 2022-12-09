@@ -1,8 +1,6 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/3a60744f-678f-4f08-a360-7d2e2dcb6560/deploy-status)](https://app.netlify.com/sites/pesto-n8-dbacs/deploys)
 
-# QuizUp
-
-![QuizUp Logo](./public/images/logo.png)
+![QuizUp Logo](./public/images/logo.png) [QuizUp](Quizup)
 
 Preparation for any exam is incomplete without mock tests and quizzes.
 <br/>
@@ -40,7 +38,7 @@ Please Note:
 <br/>
 Test Credentials:
 
-- Try as Demo User button: Click on Demo user button
+- Click on Try as Demo user button
 
 <br/>
 
@@ -54,15 +52,18 @@ Test Credentials:
 
 # Technology Stack
 
-We tried to use a completely modern tech stack while testing out some new technologies that we had never used before. This resulted in a fast, performant, and easily-extensible web app that should be fairly future-proof for the coming next several years. We used:
+we wanted to use modern technologies which would enable us to create an efficient, scalable and performance-oriented app.
+<br/>
+Therefore we opted for the following:
 
+- [React](https://reactjs.org/)
+- [React Router](https://reactrouter.com/en/main)
 - [Redux toolkit](https://redux-toolkit.js.org/)
-- [Lodash](https://lodash.com/)
 - [Axios](https://axios-http.com/docs/intro)
-- [React Query](https://react-query.tanstack.com/)
 - [Node.js](https://nodejs.org/en/)
 - [Express](https://expressjs.com/)
 - [MongoDB](https://www.mongodb.com/)
+- [Google 0Auth 2.0](https://developers.google.com/identity/protocols/oauth2)
 
 <br/>
 
