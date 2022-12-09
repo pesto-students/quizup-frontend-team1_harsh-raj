@@ -1,12 +1,42 @@
+import { useDispatch, useSelector } from "react-redux";
 import { StyledButton } from "./styled/Button.styled";
-// import { Flex } from "./styled/Flex.styled";
 import { StyledLoginCard } from "./styled/LoginCard.styled";
+import { login, reset } from "../features/auth/authSlice";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const LoginCard = () => {
-	const googleAuth = () => {
-		window.open("http://localhost:5000/auth/google", "_self");
-	};
+	const dispatch = useDispatch();
+	const navigate = useNavigate();
 
+	const { isSuccess, user } = useSelector((state) => state.auth);
+
+	function handleCallbackResponse(response) {
+		dispatch(login(response.credential));
+		navigate("/dashboard");
+	}
+
+	useEffect(() => {
+		if (isSuccess || user) {
+			navigate("/dashboard");
+		}
+
+		/*global google */
+		google.accounts.id.initialize({
+			client_id:
+				"822191944108-2l224ffp9j1a5v3mr45h78pvp6aq0b38.apps.googleusercontent.com",
+			callback: handleCallbackResponse,
+		});
+
+		google.accounts.id.renderButton(document.getElementById("signInDiv"), {
+			size: "large",
+		});
+
+		return () => {
+			dispatch(reset());
+		};
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [dispatch, user, isSuccess]);
 	return (
 		<>
 			<StyledLoginCard>
@@ -15,29 +45,7 @@ export const LoginCard = () => {
 					If you don't have an account, a new account will be created based on
 					your Google account info
 				</p>
-				{/* <h2>Continue as</h2> */}
-				{/* <Flex radioBtn>
-					<div>
-						<input type="radio" name="user" value="student" defaultChecked />
-						<label>Student</label>
-					</div>
-					<div>
-						<input type="radio" name="user" value="admin" />
-						<label>Admin</label>
-					</div>
-				</Flex> */}
-
-				<StyledButton
-					onClick={googleAuth}
-					fontclr="#343E3D"
-					color="#fff"
-					wd="250px"
-					login
-				>
-					<img src="/images/google.svg" alt="google logo" />
-					Sign in with Google
-				</StyledButton>
-
+				<div id="signInDiv"></div>
 				<StyledButton fontclr="#343E3D" color="#fff" wd="250px" login>
 					Try as Demo Student
 				</StyledButton>

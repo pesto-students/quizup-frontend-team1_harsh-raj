@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Logo = styled.img`
 	width: 50px !important;
+	margin-bottom: 50px;
 `;
 
 export const LogoImg = styled.img`
