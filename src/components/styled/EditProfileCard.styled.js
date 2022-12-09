@@ -9,7 +9,7 @@ width:800px;
 }
 input{
   width:500px;
-  height:40px;
+  height:45px;
   border-style: ridge;
   border-width:1px;
   border-radius: 4px;
@@ -18,7 +18,12 @@ input[name=About]{
   height:100px;
 }
 
-&th, td{
-  padding: 25px;
+td{
+  padding: 20px;
 }
+
+th{
+  font-size:20px;
+}
+
 `;

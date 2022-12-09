@@ -18,7 +18,9 @@ export const EditPofileCard = () => {
             </td>
           </tr>
           <br />
-          <h3>Bank details</h3>
+          <tr>
+            <th>Bank Details</th>
+          </tr>
           <br />
           <tr>
             <td>Account No:</td>
