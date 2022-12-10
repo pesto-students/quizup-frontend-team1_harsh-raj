@@ -6,10 +6,13 @@ import Searchbar from "../components/Searchbar";
 import QuizCard from "../components/QuizCard";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllQuizzes, reset } from "../features/quizzes/quizSlice";
+import MoonLoader from "react-spinners/MoonLoader";
 
 function Quiz() {
 	const dispatch = useDispatch();
-	const { quizzes, isError, message } = useSelector((state) => state.quizzes);
+	const { quizzes, isError, message, isLoading } = useSelector(
+		(state) => state.quizzes
+	);
 
 	useEffect(() => {
 		if (isError) {
@@ -33,7 +36,9 @@ function Quiz() {
 						<Searchbar />
 					</Flex>
 					<Flex wrap="true">
-						{quizzes.length > 0 ? (
+						{isLoading ? (
+							<MoonLoader loading={isLoading} size={30} color="#343E3D" />
+						) : quizzes.length > 0 ? (
 							quizzes.map((quiz) => <QuizCard key={quiz._id} item={quiz} />)
 						) : (
 							<h4>Cant't find any quizzes. Sorry for inconvenience...</h4>

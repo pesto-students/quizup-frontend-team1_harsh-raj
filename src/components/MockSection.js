@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { reset, getFiveExams } from "../features/exams/examSlice";
 import { useEffect } from "react";
+import MoonLoader from "react-spinners/MoonLoader";
 
 function MockSection() {
 	const dispatch = useDispatch();
@@ -35,7 +36,7 @@ function MockSection() {
 			</Flex>
 			<Flex>
 				{isLoading ? (
-					<h5>Loading...</h5>
+					<MoonLoader loading={isLoading} size={30} color="#343E3D" />
 				) : (
 					exams.map((exam) => <MockCard key={exam._id} item={exam} />)
 				)}
