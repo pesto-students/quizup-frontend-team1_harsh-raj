@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { reset, getAllTests } from "../features/exams/examSlice";
 import { useEffect } from "react";
+import MoonLoader from "react-spinners/MoonLoader";
 
 function MockTests() {
 	const { id } = useParams();
@@ -16,7 +17,7 @@ function MockTests() {
 		(state) => state.exams
 	);
 
-	const MockTests = tests.tests;
+	const MockTests = tests.tests ? tests.tests : [];
 
 	useEffect(() => {
 		if (isError) {
@@ -30,10 +31,6 @@ function MockTests() {
 		};
 	}, [dispatch, id, isError, message]);
 
-	if (isLoading) {
-		return <h3>Loading...</h3>;
-	}
-
 	return (
 		<>
 			<Flex>
@@ -44,13 +41,16 @@ function MockTests() {
 						<Searchbar />
 					</Flex>
 					<Flex wrap="true">
-						{MockTests ? (
+						{isLoading ? (
+							<MoonLoader loading={isLoading} size={30} color="#343E3D" />
+						) : MockTests ? (
 							MockTests.map((test) => <TestCard key={test._id} test={test} />)
 						) : (
 							<p className="error">
 								This exam does not have any tests currently.
 							</p>
 						)}
+						{}
 					</Flex>
 				</Container>
 			</Flex>
