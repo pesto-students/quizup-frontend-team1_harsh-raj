@@ -5,6 +5,7 @@ import { Container, Titlebar } from "../components/styled/Instructions.styled";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { reset, getTest } from "../features/tests/testSlice";
+import MoonLoader from "react-spinners/MoonLoader";
 
 function MockInstructions() {
 	const navigate = useNavigate();
@@ -41,7 +42,7 @@ function MockInstructions() {
 				<h1>Instructions</h1>
 
 				{isLoading ? (
-					<h2>Loading</h2>
+					<MoonLoader loading={isLoading} size={30} color="#343E3D" />
 				) : (
 					<ol>
 						<li>
