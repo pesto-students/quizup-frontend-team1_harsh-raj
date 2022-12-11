@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/users/";
+const API_URL = "https://quizup-backend.up.railway.app/api/users/";
 
 // Add quiz result to user data
 const addQuizResult = async (quizResult) => {
