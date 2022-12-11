@@ -14,9 +14,16 @@ const addTestResult = async (testResult) => {
 	return response.data;
 };
 
+// Get user data
+const getUser = async (email) => {
+	const response = await axios.post(API_URL + "getme", email);
+	return response.data;
+};
+
 const userService = {
 	addQuizResult,
 	addTestResult,
+	getUser,
 };
 
 export default userService;

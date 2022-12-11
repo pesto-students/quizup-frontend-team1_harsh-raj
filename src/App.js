@@ -27,6 +27,8 @@ import LeaderboardQuiz from "./components/LeaderboardQuiz";
 import LandingPage from "./pages/LandingPage";
 import DeleteTest from "./pages/DeleteTest";
 import QuizQuestion from "./pages/QuizQuestion";
+import { Profile } from "./pages/Profile";
+import { EditProfile } from "./pages/EditProfile";
 import QuizResult from "./components/QuizResult";
 
 const theme = {
@@ -64,6 +66,8 @@ function App() {
 						<Route path="/result" element={<MockResult />} />
 						<Route path="/result/html" element={<LeaderboardQuiz />} />
 						<Route path="/leaderboard" element={<Leaderboard />} />
+						<Route path="/profile" element={<Profile />} />
+						<Route path="/profile/edit" element={<EditProfile />} />
 					</Route>
 
 					{/* Public Routes  */}

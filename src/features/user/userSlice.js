@@ -44,6 +44,21 @@ export const addTestResult = createAsyncThunk(
 	}
 );
 
+export const getUser = createAsyncThunk(
+	"user/getData",
+	async (email, thunkAPI) => {
+		try {
+			return await userService.getUser(email);
+		} catch (err) {
+			const message =
+				(err.response && err.response.data && err.response.data.message) ||
+				err.message ||
+				err.toString();
+			return thunkAPI.rejectWithValue(message);
+		}
+	}
+);
+
 export const userSlice = createSlice({
 	name: "user",
 	initialState,
@@ -82,6 +97,20 @@ export const userSlice = createSlice({
 				state.testResult = action.payload;
 			})
 			.addCase(addTestResult.rejected, (state, action) => {
+				state.isLoading = false;
+				state.isError = true;
+				state.message = action.payload;
+				state.testResult = null;
+			})
+			.addCase(getUser.pending, (state) => {
+				state.isLoading = true;
+			})
+			.addCase(getUser.fulfilled, (state, action) => {
+				state.isLoading = false;
+				state.isSuccess = true;
+				state.user = action.payload;
+			})
+			.addCase(getUser.rejected, (state, action) => {
 				state.isLoading = false;
 				state.isError = true;
 				state.message = action.payload;
