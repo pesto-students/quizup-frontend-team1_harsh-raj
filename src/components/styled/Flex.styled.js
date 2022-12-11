@@ -67,9 +67,13 @@ export const Flex = styled.div`
 			& .answers {
 				margin-top: 30px;
 
+				& label {
+					cursor: pointer;
+				}
 				& input {
 					margin-right: 10px;
 					margin-bottom: 20px;
+					cursor: pointer;
 				}
 			}
 		`}

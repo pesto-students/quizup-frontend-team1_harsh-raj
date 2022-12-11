@@ -15,7 +15,7 @@ function QuizDetails() {
 		(state) => state.quizzes
 	);
 
-	const quiz = quizzes[0];
+	const quiz = quizzes ? quizzes[0] : {};
 
 	useEffect(() => {
 		if (isError) {
@@ -42,7 +42,7 @@ function QuizDetails() {
 			<Container>
 				<h1>Quiz Details</h1>
 
-				{isLoading ? (
+				{isLoading || !quiz ? (
 					<MoonLoader loading={isLoading} size={30} color="#343E3D" />
 				) : (
 					<ol>

@@ -11,29 +11,37 @@ import { Container, Timer } from "../components/styled/QuizQuestion.styled";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { addQuizResult } from "../features/user/userSlice";
+import { reset } from "../features/quizzes/quizSlice";
 
 function QuizQuestion() {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
-	const { quizzes, isLoading, message, isError } = useSelector(
-		(state) => state.quizzes
-	);
+
+	const { quizzes } = useSelector((state) => state.quizzes);
+	const { user } = useSelector((state) => state.auth);
+	// // quiz name, total questions, attempted questions, wrong answers, score
+	const quiz = quizzes[0];
+	const questions = quiz ? quiz.questionsmcq : [];
+	console.log(questions);
 
 	const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [score, setScore] = useState(0);
 	const [twoMultiplier, setTwoMultiplier] = useState(false);
 	const [fiveMultiplier, setFiveMultiplier] = useState(false);
+	const [attempted, setAttempted] = useState(0);
+	const [wrong, setWrong] = useState(0);
+	const [showResult, setShowResult] = useState(false);
 
-	const quiz = quizzes[0];
-	console.log(quiz);
-
-	const questions = quiz ? quiz.questionsmcq : [];
-
-	useEffect(() => {
-		if (isError) {
-			console.log(message);
-		}
-	}, [isError, message]);
+	const quizResult = {
+		email: user.email,
+		quizId: quiz._id,
+		title: quiz.title,
+		total_questions: questions.length,
+		questions_attempted: attempted,
+		score: score,
+		wrong_answers: wrong,
+	};
 
 	const twoMultiplierHandler = () => {
 		if (twoMultiplier) {
@@ -55,31 +63,45 @@ function QuizQuestion() {
 	};
 
 	const optionClickHandler = (option) => {
-		if (currentQuestion === questions.length - 1) {
-			navigate("/result");
-		} else {
-			if (option === questions[currentQuestion].answer) {
-				if (twoMultiplier) {
-					setScore(score + 20);
-				} else if (fiveMultiplier) {
-					setScore(score + 50);
-				} else {
-					setScore(score + 10);
-				}
+		setAttempted(attempted + 1);
+		if (option === questions[currentQuestion].answer) {
+			if (twoMultiplier) {
+				setScore(score + 20);
+			} else if (fiveMultiplier) {
+				setScore(score + 50);
 			} else {
-				if (twoMultiplier) {
-					setScore(score - 20);
-				} else if (fiveMultiplier) {
-					setScore(score - 50);
-				} else {
-					setScore(score - 10);
-				}
+				setScore(score + 10);
 			}
-			setTwoMultiplier(false);
-			setFiveMultiplier(false);
-			setCurrentQuestion(currentQuestion + 1);
+		} else {
+			setWrong(wrong + 1);
+			if (twoMultiplier) {
+				setScore(score - 20);
+			} else if (fiveMultiplier) {
+				setScore(score - 50);
+			} else {
+				setScore(score - 10);
+			}
+		}
+		setTwoMultiplier(false);
+		setFiveMultiplier(false);
+		const nextQuestion = currentQuestion + 1;
+		if (nextQuestion < questions.length) {
+			setCurrentQuestion(nextQuestion);
+		} else {
+			setShowResult(true);
 		}
 	};
+
+	if (showResult) {
+		dispatch(addQuizResult(quizResult));
+		navigate("/quizresult");
+	}
+
+	useEffect(() => {
+		return () => {
+			dispatch(reset());
+		};
+	}, [dispatch]);
 
 	return (
 		<Container>
@@ -100,7 +122,7 @@ function QuizQuestion() {
 						color="#343E3D"
 						onClick={() => {
 							currentQuestion === questions.length - 1
-								? navigate("/result")
+								? navigate("/quizresult")
 								: setCurrentQuestion(currentQuestion + 1);
 						}}
 					>
@@ -130,8 +152,8 @@ function QuizQuestion() {
 				)}
 			</QuestionBox>
 			<OptionsContainer>
-				{questions[currentQuestion].options.map((option, index) => (
-					<>
+				{questions ? (
+					questions[currentQuestion].options.map((option, index) => (
 						<div
 							key={option._id}
 							onClick={() => optionClickHandler(option)}
@@ -147,12 +169,19 @@ function QuizQuestion() {
 						>
 							{option}
 						</div>
-					</>
-				))}
+					))
+				) : (
+					<p>Loading</p>
+				)}
 			</OptionsContainer>
+
 			<QuestionCounter>
-				<div>{score}</div>
-				{currentQuestion + 1}/{questions.length}
+				<Flex searchbar>
+					<div>
+						{currentQuestion + 1}/{questions.length}
+					</div>
+					<div>Current Score: {score}</div>
+				</Flex>
 			</QuestionCounter>
 		</Container>
 	);
