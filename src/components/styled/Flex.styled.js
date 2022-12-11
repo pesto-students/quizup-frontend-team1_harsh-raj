@@ -94,12 +94,105 @@ export const Flex = styled.div`
     `}
 
 	${(props) =>
+<<<<<<< HEAD
     props.barChart &&
     css`
       justify-content: space-between;
       align-content: flex-start;
       margin-top: 20px;
     `}
+=======
+		props.logo &&
+		css`
+			gap: 10px;
+			align-items: center;
+			/* margin-bottom: 50px; */
+
+			@media (max-width: ${({ theme }) => theme.mobile}) {
+				flex-direction: wrap;
+				justify-content: right;
+				width: 100%;
+			}
+		`}
+
+		${(props) =>
+		props.searchbar &&
+		css`
+			justify-content: space-between;
+			align-items: center;
+		`}
+
+		${(props) =>
+		props.seeMoreBtn &&
+		css`
+			align-items: center;
+			justify-content: space-between;
+		`}
+
+		${(props) =>
+		props.wrap &&
+		css`
+			flex-wrap: wrap;
+		`}
+
+		${(props) =>
+		props.question &&
+		css`
+			height: 93%;
+			justify-content: space-between;
+
+			& .wrapper {
+				/* flex-grow: 1; */
+				width: 80vw;
+				padding: 40px 50px;
+				/* background-color: lightblue; */
+			}
+
+			& .question {
+				margin-top: 10px;
+			}
+
+			& .answers {
+				margin-top: 30px;
+
+				& label {
+					cursor: pointer;
+				}
+				& input {
+					margin-right: 10px;
+					margin-bottom: 20px;
+					cursor: pointer;
+				}
+			}
+		`}
+
+		${(props) =>
+		props.buttons &&
+		css`
+			align-items: center;
+			justify-content: space-between;
+		`}
+
+	${(props) =>
+		props.btnAlign &&
+		css`
+			width: 90%;
+			justify-content: space-between;
+			margin-bottom: 50px;
+
+			& button {
+				margin-right: 20px;
+			}
+		`}
+
+	${(props) =>
+		props.barChart &&
+		css`
+			justify-content: space-between;
+			align-content: flex-start;
+			margin-top: 20px;
+		`}
+>>>>>>> 7e2faee53bf62f935826ddfe83366687751d4102
   
     ${(props) =>
     props.analytics &&

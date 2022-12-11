@@ -5,6 +5,7 @@ import { Container, Titlebar } from "../components/styled/Instructions.styled";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getOneQuiz, reset } from "../features/quizzes/quizSlice";
+import MoonLoader from "react-spinners/MoonLoader";
 
 function QuizDetails() {
 	const dispatch = useDispatch();
@@ -14,7 +15,7 @@ function QuizDetails() {
 		(state) => state.quizzes
 	);
 
-	const quiz = quizzes[0];
+	const quiz = quizzes ? quizzes[0] : {};
 
 	useEffect(() => {
 		if (isError) {
@@ -29,10 +30,6 @@ function QuizDetails() {
 		navigate("/quiz");
 	};
 
-	if (isLoading) {
-		return <h2>Loading...</h2>;
-	}
-
 	return (
 		<>
 			<Titlebar>
@@ -45,7 +42,9 @@ function QuizDetails() {
 			<Container>
 				<h1>Quiz Details</h1>
 
-				{quiz ? (
+				{isLoading || !quiz ? (
+					<MoonLoader loading={isLoading} size={30} color="#343E3D" />
+				) : (
 					<ol>
 						<li>
 							There will be {quiz.questions ? quiz.questions.length : ""}{" "}
@@ -79,8 +78,6 @@ function QuizDetails() {
 						</li>
 						<li>{`This quiz has an entry fee of Rs. ${quiz.price}`}</li>
 					</ol>
-				) : (
-					<h2>Loading...</h2>
 				)}
 
 				<StyledButton color="#343E3D" onClick={backClickHandler}>

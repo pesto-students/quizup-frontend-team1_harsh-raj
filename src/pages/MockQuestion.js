@@ -3,47 +3,84 @@ import { Flex } from "../components/styled/Flex.styled";
 import Infobar from "../components/Infobar";
 import { StyledButton } from "../components/styled/Button.styled";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { addTestResult } from "../features/user/userSlice";
+import { reset } from "../features/tests/testSlice";
 
 function MockQuestion() {
 	const navigate = useNavigate();
-	const { test, isError, isLoading, message } = useSelector(
-		(state) => state.tests
-	);
-	const [mocktest, setMocktest] = useState(test);
+	const dispatch = useDispatch();
+	const { test, isError, message } = useSelector((state) => state.tests);
+	const { user } = useSelector((state) => state.auth);
+	const [mocktest] = useState(test);
 	const [currentQues, setCurrentQues] = useState(0);
+	const [attempted, setAttempted] = useState(0);
+	const [wrong, setWrong] = useState(0);
+	const [score, setScore] = useState(0);
+	const [selected, setSelected] = useState("");
 
 	const questions = mocktest.questions;
+	// console.log(mocktest);
+
+	const testData = {
+		email: user.email,
+		testId: mocktest._id,
+		title: mocktest.title,
+		total_questions: questions.length,
+		questions_attempted: attempted,
+		score: score,
+		wrong_answers: wrong,
+	};
 
 	const prevHandler = () => {
 		if (currentQues === 0) {
 			alert("This is the first question");
 		} else {
 			setCurrentQues(currentQues - 1);
+			setSelected("");
 		}
 	};
 
 	const nextHandler = () => {
+		setAttempted(attempted + 1);
+		if (questions[currentQues].answer === selected) {
+			console.log(selected, questions[currentQues].answer);
+			setScore(score + 5);
+		} else {
+			setWrong(wrong + 1);
+			console.log(selected, questions[currentQues].answer);
+		}
+		setSelected("");
 		if (currentQues === questions.length - 1) {
-			alert("This is the last question");
+			alert("This was the last question. Click on Submit to view results.");
 		} else {
 			setCurrentQues(currentQues + 1);
 		}
 	};
 
 	const submitHandler = () => {
+		console.log(testData);
 		const isSure = window.confirm("Are you sure you want to submit?");
 		if (isSure) {
+			dispatch(addTestResult(testData));
 			navigate("/result");
 		}
+	};
+
+	const onOptionChange = (e) => {
+		setSelected(e.target.value);
 	};
 
 	useEffect(() => {
 		if (isError) {
 			console.log(message);
 		}
-	}, [isError, message]);
+
+		return () => {
+			dispatch(reset());
+		};
+	}, [dispatch, isError, message]);
 
 	return (
 		<div style={{ height: "100vh" }}>
@@ -61,30 +98,19 @@ function MockQuestion() {
 							<p>{questions && questions[currentQues].question}</p>
 						</div>
 						<div className="answers">
-							<div>
-								<input type="radio" name="option" id="a" />
-								<label htmlFor="a">
-									A. {questions && questions[currentQues].options[0]}
-								</label>
-							</div>
-							<div>
-								<input type="radio" name="option" id="b" />
-								<label htmlFor="b">
-									B. {questions && questions[currentQues].options[1]}
-								</label>
-							</div>
-							<div>
-								<input type="radio" name="option" id="c" />
-								<label htmlFor="c">
-									C. {questions && questions[currentQues].options[2]}
-								</label>
-							</div>
-							<div>
-								<input type="radio" name="option" id="d" />
-								<label htmlFor="d">
-									D. {questions && questions[currentQues].options[3]}
-								</label>
-							</div>
+							{questions &&
+								questions[currentQues].options.map((option, index) => (
+									<div key={option._id}>
+										<input
+											type="radio"
+											name="answer"
+											id={index}
+											value={option}
+											onChange={onOptionChange}
+										/>
+										<label htmlFor={index}>{option}</label>
+									</div>
+								))}
 						</div>
 					</div>
 					<Flex btnAlign>
@@ -97,6 +123,7 @@ function MockQuestion() {
 							</StyledButton>
 						</div>
 						<StyledButton onClick={submitHandler}>Submit</StyledButton>
+						<div>{score}</div>
 					</Flex>
 				</Flex>
 				<Infobar props={questions} />

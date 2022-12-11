@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getFiveQuizzes, reset } from "../features/quizzes/quizSlice";
 import { useEffect } from "react";
+import MoonLoader from "react-spinners/MoonLoader";
 
 function QuizSection() {
 	const dispatch = useDispatch();
@@ -35,7 +36,7 @@ function QuizSection() {
 			</Flex>
 			<Flex>
 				{isLoading ? (
-					<h5>Loading...</h5>
+					<MoonLoader loading={isLoading} size={30} color="#343E3D" />
 				) : quizzes.length > 0 ? (
 					quizzes.map((quiz) => <QuizCard key={quiz._id} item={quiz} />)
 				) : (
