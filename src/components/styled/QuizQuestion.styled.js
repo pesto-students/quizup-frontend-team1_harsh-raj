@@ -117,7 +117,7 @@ export const OptionsContainer = styled.div`
 `;
 
 export const QuestionCounter = styled.div`
-	width: fit-content;
+	width: 100%;
 	font-size: 2rem;
 	font-weight: 700;
 `;

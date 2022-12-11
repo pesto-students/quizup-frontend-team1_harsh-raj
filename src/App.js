@@ -27,6 +27,7 @@ import LeaderboardQuiz from "./components/LeaderboardQuiz";
 import LandingPage from "./pages/LandingPage";
 import DeleteTest from "./pages/DeleteTest";
 import QuizQuestion from "./pages/QuizQuestion";
+import QuizResult from "./components/QuizResult";
 
 const theme = {
 	colors: {
@@ -59,6 +60,7 @@ function App() {
 						<Route path="/leaderboard" element={<Leaderboard />} />
 						<Route path="/start" element={<MockQuestion />} />
 						<Route path="/play" element={<QuizQuestion />} />
+						<Route path="/quizresult" element={<QuizResult />} />
 						<Route path="/result" element={<MockResult />} />
 						<Route path="/result/html" element={<LeaderboardQuiz />} />
 						<Route path="/leaderboard" element={<Leaderboard />} />
@@ -68,6 +70,7 @@ function App() {
 					<Route path="/" element={<LandingPage />} />
 					<Route path="/login" element={<LoginPage />} />
 
+					{/* Admin Routes */}
 					<Route path="/admin" element={<AdminDashboard />} />
 					<Route path="/create" element={<Create />} />
 					<Route path="/create/mock" element={<CreateMockTest />} />
@@ -78,9 +81,7 @@ function App() {
 					<Route path="/delete" element={<Delete />} />
 					<Route path="/delete/mock" element={<DeleteMock />} />
 					<Route path="/delete/quiz" element={<DeleteQuiz />} />
-
 					<Route path="/deletetest" element={<DeleteTest />} />
-					<Route path="/deletequiz" element={<DeleteQuiz />} />
 				</Routes>
 			</ThemeProvider>
 		</Router>
