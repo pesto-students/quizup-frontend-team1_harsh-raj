@@ -28,7 +28,7 @@ export const ProfileCard = () => {
 
 	return (
 		<StyledProfileCard>
-			{!user ? (
+			{isLoading ? (
 				<h2>Please wait..</h2>
 			) : (
 				<>
@@ -47,11 +47,11 @@ export const ProfileCard = () => {
 					</div>
 					<div>
 						<h4>Number of mock tests given:</h4>
-						<p>{user.mock_test_given.length}</p>
+						<p>{user.mock_test_given ? user.mock_test_given.length : []}</p>
 					</div>
 					<div>
 						<h4>Number of Quizzes given:</h4>
-						<p>{user.quiz_given.length}</p>
+						<p>{user.quiz_given ? user.quiz_given.length : []}</p>
 					</div>
 				</>
 			)}

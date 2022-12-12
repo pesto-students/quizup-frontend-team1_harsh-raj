@@ -25,13 +25,13 @@ function QuizQuestion() {
 	const questions = quiz ? quiz.questionsmcq : [];
 	console.log(questions);
 
+	const [showResult, setShowResult] = useState(false);
 	const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [score, setScore] = useState(0);
 	const [twoMultiplier, setTwoMultiplier] = useState(false);
 	const [fiveMultiplier, setFiveMultiplier] = useState(false);
 	const [attempted, setAttempted] = useState(0);
 	const [wrong, setWrong] = useState(0);
-	const [showResult, setShowResult] = useState(false);
 
 	const quizResult = {
 		email: user.email,

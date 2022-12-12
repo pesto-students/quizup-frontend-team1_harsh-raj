@@ -11,23 +11,42 @@ import MoonLoader from "react-spinners/MoonLoader";
 
 export default function MockResult() {
 	const dispatch = useDispatch();
-	const { testResult, isLoading } = useSelector((state) => state.user);
+	const { testResult, isLoading, message, isError } = useSelector(
+		(state) => state.user
+	);
 
 	useEffect(() => {
+		if (isError) {
+			console.log(message);
+		}
+
 		return () => {
 			dispatch(reset());
 		};
-	});
+	}, [dispatch, isError, message]);
+
+	console.log(testResult);
+
+	if (isLoading) {
+		return <MoonLoader loading={isLoading} size={30} color="#343E3D" />;
+	}
 
 	return (
-		<Container>
-			<Flex logo>
-				<Logo src="/images/logo-gradient.svg" alt="Quizup logo" />
-				<LogoText color="#343E3D">QuizUp</LogoText>
-			</Flex>
-			{testResult ? (
-				<>
-					<h1>Your {testResult.title} test results are here...</h1>
+		<>
+			{testResult === null ? (
+				<Container>
+					<h2>Sorry! There seems to be an error...</h2>
+					<Link to={"/dashboard"}>
+						<StyledButton>Back to Home</StyledButton>
+					</Link>
+				</Container>
+			) : (
+				<Container>
+					<Flex logo>
+						<Logo src="/images/logo-gradient.svg" alt="Quizup logo" />
+						<LogoText color="#343E3D">QuizUp</LogoText>
+					</Flex>
+					<h1>Your {testResult.title} results are here...</h1>
 					<StyledMockResult>
 						<div>
 							<p>
@@ -38,37 +57,32 @@ export default function MockResult() {
 								<b>{testResult.questions_attempted}</b>
 							</p>
 							<p>
-								Number of wrong answers = <b> {testResult.wrong_answers}</b>
+								Number of wrong answers = <b>{testResult.wrong_answers}</b>
 							</p>
 							<div>
 								<p>
-									Total score ={" "}
-									<b>
-										{testResult.score + "/" + testResult.total_questions * 5}
-									</b>{" "}
+									Final score = <b>{testResult.score}</b>{" "}
 								</p>
 							</div>
 						</div>
-
-						<Photo src="/images/Result_image.svg" alt="result illustration" />
+						<div>
+							<Photo src="/images/Result_image.svg" alt="result illustration" />
+						</div>
 					</StyledMockResult>
-				</>
-			) : (
-				<MoonLoader loading={isLoading} size={30} color="#343E3D" />
+					<Link to="/dashboard">
+						<StyledButton
+							color="#FFD05A"
+							fontclr="#343E3D"
+							style={{ marginRight: "30px" }}
+						>
+							Back to Home
+						</StyledButton>
+					</Link>
+					<Link to="/quiz">
+						<StyledButton color="#343E3D">Play again</StyledButton>
+					</Link>
+				</Container>
 			)}
-
-			<Link to={`/dashboard`}>
-				<StyledButton
-					fontclr="#343E3D"
-					color="#FFD05A"
-					style={{ marginRight: "50px" }}
-				>
-					Back to Home
-				</StyledButton>
-			</Link>
-			<Link to={"/exams"}>
-				<StyledButton color="#343E3D">Take another test</StyledButton>
-			</Link>
-		</Container>
+		</>
 	);
 }
