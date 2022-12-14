@@ -28,7 +28,7 @@ export const ProfileCard = () => {
 
 	return (
 		<StyledProfileCard>
-			{isLoading ? (
+			{isLoading || !user ? (
 				<h2>Please wait..</h2>
 			) : (
 				<>
