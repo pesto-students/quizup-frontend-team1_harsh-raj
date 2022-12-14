@@ -122,7 +122,7 @@ function QuizQuestion() {
 						color="#343E3D"
 						onClick={() => {
 							currentQuestion === questions.length - 1
-								? navigate("/quizresult")
+								? setShowResult(true)
 								: setCurrentQuestion(currentQuestion + 1);
 						}}
 					>
