@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { StyledButton } from "./styled/Button.styled";
 import { StyledLoginCard } from "./styled/LoginCard.styled";
-import { login, reset } from "../features/auth/authSlice";
+import { login, reset, demoLogin } from "../features/auth/authSlice";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -9,11 +9,15 @@ export const LoginCard = () => {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
-	const { isSuccess, user } = useSelector((state) => state.auth);
+	const { isSuccess, user, isLoading } = useSelector((state) => state.auth);
 
 	function handleCallbackResponse(response) {
 		dispatch(login(response.credential));
 		navigate("/dashboard");
+	}
+
+	function demoLoginHandler() {
+		dispatch(demoLogin());
 	}
 
 	useEffect(() => {
@@ -37,6 +41,15 @@ export const LoginCard = () => {
 		};
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [dispatch, user, isSuccess]);
+
+	if (isLoading) {
+		return (
+			<div>
+				<h1>Loading...</h1>
+			</div>
+		);
+	}
+
 	return (
 		<>
 			<StyledLoginCard>
@@ -46,7 +59,13 @@ export const LoginCard = () => {
 					your Google account info
 				</p>
 				<div id="signInDiv"></div>
-				<StyledButton fontclr="#343E3D" color="#fff" wd="250px" login>
+				<StyledButton
+					onClick={demoLoginHandler}
+					fontclr="#343E3D"
+					color="#fff"
+					wd="250px"
+					login
+				>
 					Try as Demo Student
 				</StyledButton>
 			</StyledLoginCard>
