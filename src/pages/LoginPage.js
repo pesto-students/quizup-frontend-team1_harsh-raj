@@ -4,8 +4,11 @@ import { Flex } from "../components/styled/Flex.styled";
 import { Link } from "react-router-dom";
 import { Logo, LogoText } from "../components/styled/Logo.styled";
 import { LoginWrapper } from "../components/styled/LoginWrapper.styled";
+import { useSelector } from "react-redux";
 
 export default function LoginPage() {
+	const { isLoading } = useSelector((state) => state.auth);
+
 	return (
 		<>
 			<LoginWrapper>
@@ -14,7 +17,7 @@ export default function LoginPage() {
 					<LogoText color="#343E3D">QuizUp</LogoText>
 				</Flex>
 				<LoginCard />
-				<Link to={"/"}>
+				<Link to={"/"} className={isLoading ? "hidden" : ""}>
 					<StyledButton>Back to Home</StyledButton>
 				</Link>
 			</LoginWrapper>

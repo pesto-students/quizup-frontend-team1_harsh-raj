@@ -23,7 +23,6 @@ function QuizQuestion() {
 	// // quiz name, total questions, attempted questions, wrong answers, score
 	const quiz = quizzes[0];
 	const questions = quiz ? quiz.questionsmcq : [];
-	console.log(questions);
 
 	const [showResult, setShowResult] = useState(false);
 	const [currentQuestion, setCurrentQuestion] = useState(0);

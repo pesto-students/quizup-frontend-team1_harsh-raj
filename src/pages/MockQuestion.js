@@ -123,7 +123,6 @@ function MockQuestion() {
 							</StyledButton>
 						</div>
 						<StyledButton onClick={submitHandler}>Submit</StyledButton>
-						<div>{score}</div>
 					</Flex>
 				</Flex>
 				<Infobar props={questions} />

@@ -5,7 +5,7 @@ function TestCard({ test: { title, _id } }) {
 	return (
 		<StyledMockCard>
 			<StyledIcon>
-				<img src={`/images/exam-icons/test_icon.svg`} alt={title} />
+				<img src={`/images/test_icon.svg`} alt={title} />
 			</StyledIcon>
 			<p>{title}</p>
 			<Link to={`/instructions/${_id}`}>

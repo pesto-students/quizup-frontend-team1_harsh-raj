@@ -28,7 +28,11 @@ export default function MockResult() {
 	console.log(testResult);
 
 	if (isLoading) {
-		return <MoonLoader loading={isLoading} size={30} color="#343E3D" />;
+		return (
+			<div className="result-loading">
+				<MoonLoader loading={isLoading} size={30} color="#343E3D" />
+			</div>
+		);
 	}
 
 	return (
