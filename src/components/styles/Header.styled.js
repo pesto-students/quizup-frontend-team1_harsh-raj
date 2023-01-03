@@ -18,12 +18,13 @@ export const Nav = styled.div`
 	justify-content: space-between;
 	flex-wrap: wrap;
 	background: white;
-	margin-left: 70px;
+	margin-left: 80px;
 	margin-right: 60px;
 	margin-bottom: 20px;
 
 	@media (max-width: ${({ theme }) => theme.mobile}) {
-		width: 80%;
+		/* width: 80%; */
+		margin-inline: 0;
 	}
 `;
 export const Logo = styled.a`
@@ -33,11 +34,6 @@ export const Logo = styled.a`
 	span {
 		font-size: 3rem;
 		margin-left: 10px;
-	}
-	@media (max-width: ${({ theme }) => theme.mobile}) {
-		flex-direction: wrap;
-		width: 40%;
-		margin-left: 30px;
 	}
 `;
 
@@ -83,7 +79,7 @@ export const Rightcontainer = styled.div`
 	span {
 		height: 3px;
 		width: 25px;
-		background: #7b7fda;
+		background: ${({ theme }) => theme.colors.darkGreen};
 		margin-bottom: 4px;
 		border-radius: 5px;
 	}
@@ -95,6 +91,7 @@ export const Rightcontainer = styled.div`
 `;
 
 export const Menu = styled.div`
+	display: hidden;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -105,6 +102,7 @@ export const Menu = styled.div`
 		flex-direction: column;
 		max-height: ${({ isOpen }) => (isOpen ? "300px" : "0")};
 		transition: max-height 0.3s ease-in;
+		margin: 10px auto;
 	}
 `;
 
@@ -114,11 +112,11 @@ export const MenuLink = styled.a`
 	text-align: center;
 	text-decoration: none;
 	color: #000;
-	transition: all 0.3s ease-in;
+	transition: all 0.2s ease-in;
 	font-size: 1.2rem;
 
 	&:hover {
-		color: #7b7fda;
+		color: ${({ theme }) => theme.colors.orange};
 	}
 `;
 export const Image = styled.img`

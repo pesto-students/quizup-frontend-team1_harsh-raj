@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://quizup-backend.up.railway.app/api/quiz/";
+const API_URL = "https://quizup-backend.onrender.com/api/quiz/";
 
 const getFiveQuizzes = async () => {
 	const response = await axios.get(API_URL + 5);

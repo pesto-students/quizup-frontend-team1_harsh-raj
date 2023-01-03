@@ -22,10 +22,11 @@ export const Flex = styled.div`
 
 			@media (max-width: ${({ theme }) => theme.mobile}) {
 				flex-direction: wrap;
-				justify-content: right;
+				justify-content: center;
 				width: 100%;
 			}
 		`}
+
 
 		${(props) =>
 		props.searchbar &&
@@ -99,20 +100,6 @@ export const Flex = styled.div`
 			justify-content: space-between;
 			align-content: flex-start;
 			margin-top: 20px;
-		`}
-
-		${(props) =>
-		props.logo &&
-		css`
-			gap: 10px;
-			align-items: center;
-			/* margin-bottom: 50px; */
-
-			@media (max-width: ${({ theme }) => theme.mobile}) {
-				flex-direction: wrap;
-				justify-content: right;
-				width: 100%;
-			}
 		`}
 
 		${(props) =>
