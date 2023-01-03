@@ -1,7 +1,7 @@
 import axios from "axios";
 import jwtdecode from "jwt-decode";
 
-const API_URL = "http://quizup-backend.up.railway.app/api/users/";
+const API_URL = "https://quizup-backend.up.railway.app/api/users/";
 
 const login = async (token) => {
 	const userData = jwtdecode(token);
