@@ -43,7 +43,7 @@ function MockTests() {
 					<Flex wrap="true">
 						{isLoading ? (
 							<MoonLoader loading={isLoading} size={30} color="#343E3D" />
-						) : MockTests ? (
+						) : MockTests.length > 0 ? (
 							MockTests.map((test) => <TestCard key={test._id} test={test} />)
 						) : (
 							<p className="error">
