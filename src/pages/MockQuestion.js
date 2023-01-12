@@ -107,6 +107,7 @@ function MockQuestion() {
 											id={index}
 											value={option}
 											onChange={onOptionChange}
+											checked={selected === option}
 										/>
 										<label htmlFor={index}>{option}</label>
 									</div>
