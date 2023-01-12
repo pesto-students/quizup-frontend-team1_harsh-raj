@@ -50,13 +50,8 @@ function MockInstructions() {
 							choice questions in this test.
 						</li>
 						<li>
-							There will be two sections: Quant and Verbal having 20 questions
-							each. You can jump between sections and attempt questions in any
-							order.
-						</li>
-						<li>
-							The questions have marking scheme as follows: 3 marks for each
-							correct answer and deduction of 2 marks for each wrong answer.
+							For each correct response, you will get 5 points. There is no
+							negative marking.
 						</li>
 						<li>
 							There will be a time limit of {test.duration} minutes to attempt
@@ -67,7 +62,10 @@ function MockInstructions() {
 							Once you start the test, you cannot go back or leave the test in
 							between, you have to submit the exam to finish it.
 						</li>
-						<li>Some more instructions...</li>
+						<li>
+							Once you are done with the test, please click on the Submit button
+							to proceed further to the results.
+						</li>
 					</ol>
 				)}
 

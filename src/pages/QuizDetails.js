@@ -47,7 +47,7 @@ function QuizDetails() {
 				) : (
 					<ol>
 						<li>
-							There will be {quiz.questions ? quiz.questions.length : ""}{" "}
+							There will be {quiz.questionsmcq ? quiz.questionsmcq.length : ""}{" "}
 							questions in this quiz.
 						</li>
 						<li>
@@ -57,10 +57,6 @@ function QuizDetails() {
 						<li>
 							There may be MCQs as well as True/False questions in this quiz.
 							Please choose the answer accordingly.
-						</li>
-						<li>
-							The quiz will begin when you complete the entry fee payment by
-							clicking on pay button below.
 						</li>
 						<li>
 							Once you start the quiz, you cannot go back or leave it in
