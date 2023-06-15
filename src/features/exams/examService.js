@@ -1,22 +1,23 @@
 import axios from "axios";
+import { API_URL } from "../../constants";
 
-const API_URL = "https://quizup-backend.onrender.com/api/exam/";
+const EXAM_API_URL = API_URL + "api/exam/";
 
 // Get 5 exams (for user dashboard)
 const getFiveExams = async () => {
-	const response = await axios.get(API_URL + 5);
+	const response = await axios.get(EXAM_API_URL + 5);
 	return response.data;
 };
 
 // Get all exams
 const getAllExams = async () => {
-	const response = await axios.get(API_URL);
+	const response = await axios.get(EXAM_API_URL);
 	return response.data;
 };
 
 // Get all tests in an exam
 const getAllTests = async (examId) => {
-	const response = await axios.get(API_URL + examId);
+	const response = await axios.get(EXAM_API_URL + examId);
 	return response.data;
 };
 

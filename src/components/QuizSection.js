@@ -14,6 +14,8 @@ function QuizSection() {
 		(state) => state.quizzes
 	);
 
+	console.log(quizzes);
+
 	useEffect(() => {
 		if (isError) {
 			console.log(message);
@@ -37,8 +39,8 @@ function QuizSection() {
 			<Flex>
 				{isLoading ? (
 					<MoonLoader loading={isLoading} size={30} color="#343E3D" />
-				) : quizzes.length > 0 ? (
-					quizzes.map((quiz) => <QuizCard key={quiz._id} item={quiz} />)
+				) : quizzes?.length > 0 ? (
+					quizzes?.map((quiz) => <QuizCard key={quiz._id} item={quiz} />)
 				) : (
 					<h4>Cant't find any quizzes. Sorry for inconvenience...</h4>
 				)}

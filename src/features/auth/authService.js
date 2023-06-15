@@ -1,11 +1,12 @@
 import axios from "axios";
 import jwtdecode from "jwt-decode";
+import { API_URL } from "../../constants";
 
-const API_URL = "https://quizup-backend.onrender.com/api/users/";
+const AUTH_API_URL = API_URL + "api/users/";
 
 const login = async (token) => {
 	const userData = jwtdecode(token);
-	const response = await axios.post(API_URL + "login", userData);
+	const response = await axios.post(AUTH_API_URL + "login", userData);
 	if (response.data) {
 		localStorage.setItem("user", JSON.stringify(response.data));
 	}
@@ -14,7 +15,7 @@ const login = async (token) => {
 
 // Demo User login
 const demoLogin = async () => {
-	const response = await axios.post(API_URL + "demo");
+	const response = await axios.post(AUTH_API_URL + "demo");
 	if (response.data) {
 		localStorage.setItem("user", JSON.stringify(response.data));
 	}
