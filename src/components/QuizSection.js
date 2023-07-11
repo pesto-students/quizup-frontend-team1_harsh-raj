@@ -14,8 +14,6 @@ function QuizSection() {
 		(state) => state.quizzes
 	);
 
-	console.log(quizzes);
-
 	useEffect(() => {
 		if (isError) {
 			console.log(message);

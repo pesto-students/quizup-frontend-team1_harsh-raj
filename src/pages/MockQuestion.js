@@ -21,7 +21,6 @@ function MockQuestion() {
 	const [selected, setSelected] = useState("");
 
 	const questions = mocktest.questions;
-	// console.log(mocktest);
 
 	const testData = {
 		email: user.email,
@@ -45,11 +44,9 @@ function MockQuestion() {
 	const nextHandler = () => {
 		setAttempted(attempted + 1);
 		if (questions[currentQues].answer === selected) {
-			console.log(selected, questions[currentQues].answer);
 			setScore(score + 5);
 		} else {
 			setWrong(wrong + 1);
-			console.log(selected, questions[currentQues].answer);
 		}
 		setSelected("");
 		if (currentQues === questions.length - 1) {
@@ -60,7 +57,6 @@ function MockQuestion() {
 	};
 
 	const submitHandler = () => {
-		console.log(testData);
 		const isSure = window.confirm("Are you sure you want to submit?");
 		if (isSure) {
 			dispatch(addTestResult(testData));
